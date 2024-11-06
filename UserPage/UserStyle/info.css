@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: gold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: #2d3035;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+body h1{
+    translate: 0px -60px;
+}
+.editProfil{
+    translate: 0px -40px;
+}
+.editProfil form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.editProfil form #MyProfile{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.editProfil form input{
+    width: 450px;
+    margin-top: 20px;
+    padding-top: 18px;
+    padding-bottom: 3px;
+    border: none;
+    border-bottom: solid 1px  gray ;
+    background: transparent;
+    outline: none;
+    color: white;
+}
+input:focus{
+    border-bottom: solid 1px  green ;
+}
+input::placeholder{
+    font-size: 15px;
+}
+input:focus::placeholder{
+    translate: 0px -18px;
+    transition: .3s;
+    font-size: 15px;
+}
+.editProfil form input[type="submit"]{
+    width: 100px;
+    background-color: rgba(255, 217, 0, 0.753);
+    padding: 10px 0px;
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    left: 0;
+    bottom: -50px;
+    cursor: pointer;
+}
+.editProfil form input[type="submit"]:hover{
+    background-color: rgb(255, 217, 0);
+    transition: .5s;
+}
+
+/* back & pointer page style */
+
+#BackLink{
+    translate: -600px -100px;
+    background-color: rgb(51, 70, 153);
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+#BackLink:hover{
+    background-color: rgb(46, 75, 207);
+    transition: .3s;
+}
+h4{
+    translate: -400px -70px;
+}
+h4 #homeLink{
+    text-decoration: none;
+    color: white;
+}
+h4 #homeLink:hover{
+    /* text-decoration: underline gold 2px; */
+    color: gold;
+    transition: .5s;
+}
+h4 #ThisPage{
+    text-decoration: none;
+}
+h4 #ThisPage:hover{
+    /* text-decoration: underline gold 2px; */
+    color: white;
+    transition: .5s;
+}
+
+
+#inptFile{
+    display: none;
+}
+#Replaced_File img{
+    width: 20px;
+}
+#Replaced_File h2{
+    font-size: 13px;
+    color: white;
+}
+#Replaced_File{
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(51, 70, 153);
+    padding: 5px;
+    translate: 0px 15px;
+}
+#Replaced_File:hover{
+    background-color: rgb(46, 75, 207);
+    cursor: pointer;
+    transition: .5s;
+}

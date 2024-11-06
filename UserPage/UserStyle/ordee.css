@@ -1,0 +1,305 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 17px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2d3035;
+    position: relative;
+
+}
+.product{
+    width: 55%;
+    background-color: rgba(105, 105, 105, 0.664);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* flex-direction: row-reverse; */
+    padding: 15px;
+    padding-bottom: 35px;
+    border-radius: 10px;
+    position: relative;
+}
+.product .pic img{
+    width: 140px;
+    height: 140px;
+    border-radius: 10px;
+}
+/* .info{
+    translate: -380px;
+} */
+.info p:nth-child(1){
+    font-size: medium;
+    font-weight: 700;
+    margin-top: 5px;
+}
+.info p:nth-child(2){
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 5px;
+    color: rgb(0, 252, 0);
+}
+.info p:nth-child(3){
+    color: red;
+    text-decoration: line-through white;
+    font-size: 19px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+form input[type='text'] , input[type='number']{
+    width: 450px;
+    margin-top: 20px;
+    padding-top: 18px;
+    padding-bottom: 3px;
+    border: none;
+    border-bottom: solid 1px  gray ;
+    background: transparent;
+    outline: none;
+    color: white;
+}
+form input::placeholder{
+    font-size: 15px;
+}
+form input:focus::placeholder{
+    translate: 0px -18px;
+    transition: .3s;
+    font-size: 15px;
+}
+form input[type='text']:focus , input[type='number']:focus{
+    border-bottom: solid 1px  white ;
+    transition: .5s;
+}
+form input[type='radio']{
+    margin-top: 20px;
+    padding-top: 18px;
+    padding-bottom: 3px;
+}
+form p{
+    /* background-color: rgba(0, 255, 64, 0.473); */
+    width: fit-content;
+    /* margin-top: 20px; */
+    /* padding: 3px; */
+    font-size: 16px;
+    padding-bottom: 3px;
+    color: rgb(0, 255, 34);
+    font-weight: 700;
+}
+form input[type="submit"]{
+    width: 150px;
+    background-color: rgb(11, 184, 141);
+    padding: 10px 0px;
+    color: black;
+    font-size: 15px;
+    position: absolute;
+    left: 0;
+    bottom: -50px;
+    border: none;
+    cursor: pointer;
+}
+form input[type="submit"]:hover{
+    background-color: rgb(0, 255, 200);
+    transition: .5s;
+}
+/* .star img{
+    width: 20px;
+} */
+#TextInpt{
+    width: 200px;
+    /* padding-left: 10px; */
+    /* padding-right: 1px; */
+    border: none;
+    margin-top: 0px;
+}
+#C_Message{
+    background-color: rgb(149, 250, 149);
+    width: 400px;
+    padding: 10px 0px;
+    position: absolute;
+    top: 50px;
+    display: none;
+    color: black;
+    text-align: center;
+    /* translate: 50px -200px; */
+    /* transition: 1s; */
+    /* scale: 1.7; */
+    /* border-radius: 5px; */
+}
+
+
+/* back & pointer page style */
+
+/* .jjj{
+    position: absolute;
+    width: 100%;
+    height: 30vh;
+}
+
+#BackL{
+    translate: -430px -250px;
+    background-color: rgb(51, 70, 153);
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+#BackL:hover{
+    background-color: rgb(46, 75, 207);
+    transition: .3s;
+}
+h4{
+    translate: -430px -250px;
+}
+h4 #homeL{
+    text-decoration: none;
+    color: white;
+}
+h4 #homeL:hover{
+    text-decoration: underline gold 2px;
+}
+h4 #ThisPag{
+    text-decoration: none;
+}
+h4 #ThisPag:hover{
+    text-decoration: underline gold 2px;
+} */
+
+.Quantity{
+    width: 300px;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: brown; */
+    translate: 5px;
+}
+.info{
+    align-self: flex-start;
+}
+.info a button{
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 4px;
+    font-size: small;
+    cursor: pointer;
+}
+.info a button:hover{
+    background: transparent;
+    border: 1px solid white;
+    transition: 1s;
+}
+.Quantity .Add_Remove{
+    display: flex;
+    /* flex-basis: 20%; */
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: blue; */
+    width: 90%;
+    align-self: self-start;
+    /* padding: 20px 0px; */
+}
+.Quantity .Add_Remove img , .deleteIcon img{
+    width: 25px;
+    cursor: pointer;
+}
+/* .deleteIcon{
+    align-content: center;
+} */
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: 25%;
+}
+
+.Total{
+    background-color: #b89c5c6b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 9rem;
+    padding: 10px;
+    border-radius: 10px;
+}
+.Total button{
+    /* display: block; */
+    margin: auto;
+    width: 100%;
+    /* border: none; 1px solid rgb(0, 255, 200) */
+    background-color: rgb(11, 184, 141);
+    border: none;
+    border-radius: 5px;
+    margin: 5px 0px;
+    cursor: pointer;
+    color: black;
+    font-weight: 500;
+    padding: 4px 0px;
+
+}
+.Total button:hover{
+    background: rgb(0, 255, 200);
+    /* border: 1px solid white; */
+    /* color: white; */
+    transition: .5s;
+}
+.Total div:nth-child(2){
+    translate: 0px 10px;
+}
+
+
+
+.rat{
+    position: absolute;
+    bottom: 10px;
+    right: 44%;
+    display: flex;
+    align-items: center;
+}
+.rat .stars{
+    position: relative;
+    left: 15px;
+    cursor: pointer;
+}
+.rat p{
+    font-weight: 700;
+}
+.star {
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+.stars  .one {
+    color: rgb(255, 0, 0);
+  }
+   
+.stars  .two {
+    color: rgb(255, 106, 0);
+  }
+   
+  .three {
+    color: rgb(251, 255, 120);
+  }
+   
+  .four {
+    color: rgb(255, 255, 0);
+  }
+   
+  .five {
+    color: rgb(0, 255, 34);
+  }
