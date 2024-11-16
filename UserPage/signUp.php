@@ -187,6 +187,7 @@
 
 
     <script>
+
     function myMenuFunction() {
         var i = document.getElementById("navMenu");
 
@@ -203,6 +204,10 @@
     var b = document.getElementById("registerBtn");
     var x = document.getElementById("login");
     let y = document.getElementById("register");
+
+    let cc = document.getElementById("id1");
+
+
 
     function login() {
         x.style.left = "4px";

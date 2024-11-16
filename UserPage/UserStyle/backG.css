@@ -44,7 +44,7 @@ header a{
     transform: translateX(-50%);
     padding-right: 30%;
     box-sizing: border-box;
-    color: #fff;
+    color: #FBE9D0;
     text-shadow: 0 5px 10px #0004;
 }
 .carousel .list .item .content .des{
@@ -63,13 +63,13 @@ header a{
     line-height: 1.3em;
 }
 .carousel .list .item .topic{
-    color: gold;
+    color: #FBE9D0;
 }
 .carousel .list .item .title{
-    color: rgb(0, 255, 200);
+    color: #FBE9D0;
 }
 .carousel .list .item .des{
-    color: rgb(0, 255, 200);
+    color: #FBE9D0;
     font-weight: 600;
     letter-spacing: 2px;
 }
@@ -84,7 +84,7 @@ header a{
 .carousel .list .item .buttons button{
     letter-spacing: 3px;
     font-family: Poppins;
-    background-color: rgb(11, 184, 141);
+    background-color: #2B7A78;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -101,19 +101,19 @@ header a{
 
 }
 .carousel .list .item .buttons button:hover{
-    background: rgb(0, 255, 200);
+    background: #14afaa;
     /* border: 1px solid white; */
     /* color: white; */
     transition: .5s;
-    box-shadow:0px 0px 10px rgba(0, 255, 255, 0.61) ,
-    0px 0px 20px rgba(0, 255, 255, 0.61) ,
-    0px 0px 40px rgba(0, 255, 255, 0.61) ,
-    0px 0px 80px rgba(0, 255, 255, 0.61);
+    box-shadow:0px 0px 5px rgba(0, 255, 255, 0.40) ,
+    0px 0px 20px rgba(0, 255, 255, 0.40) ,
+    0px 0px 40px rgba(0, 255, 255, 0.40) ,
+    0px 0px 80px rgba(0, 255, 255, 0.40);
 }
 .carousel .list .item .buttons button:nth-child(2){
     background-color: transparent;
     border: 1px solid #fff;
-    color: #eee;
+    color: #FBE9D0;
 }
 /* thumbail */
 .thumbnail{
@@ -146,7 +146,7 @@ header a{
 }
 .thumbnail .item .content .title{
     font-weight: 500;
-    color: rgb(0, 255, 255);
+    color: #FBE9D0;
 }
 .thumbnail .item .content .description{
     font-weight: 300;

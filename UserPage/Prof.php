@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <title>Document</title>
-    <link rel="stylesheet" href="UserStyle/Slider.css">
-    <link rel="stylesheet" href="UserStyle/backGround.css">
-    <link rel="stylesheet" href="UserStyle/Profi.css">
+    <title>Profil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="UserStyle/Slide.css">
+    <link rel="stylesheet" href="UserStyle/backG.css">
+    <link rel="stylesheet" href="UserStyle/Prof.css">
     <link rel="icon" href="./Picture/hamburger.png">
 
 </head>
@@ -33,7 +36,7 @@
                     <img src="./Picture/picMe/profile.png" alt="" id='prof'>
                     <img src="./Picture/picMe/notification-bell.png" id="notification">
                     <a href="signUp.php"><img src="./Picture/picMe/log-out.png" id="orders"></a>
-                    <img src="Picture/shopping-cart.png" alt="" class='Cart'>
+                    <!-- <img src="Picture/shopping-cart.png" alt="" class='Cart'> -->
                 </div>
             </div>
         </header>
@@ -204,8 +207,9 @@
         <!-- next prev -->
 
         <div class="arrows">
-            <button id="prev"><</button>
-            <button id="next">></button>
+            <button id="prev">
+                < </button>
+                    <button id="next">></button>
         </div>
         <!-- time running -->
         <!-- <div class="time"></div> -->
@@ -228,6 +232,7 @@
     <section id="tranding">
         <div class="container">
             <!-- <h3 class="text-center section-subheading">- popular Delivery -</h3> -->
+             <!-- <img src="../wallpaperflare.com_wallpaper (2).jpg" alt="" width=''> -->
             <h1 class="section-heading">Discover Our Products</h1>
         </div>
         <div class="container">
@@ -426,7 +431,14 @@
 
 
 
-
+    <div class="pagination" id="pagination">
+        <a id="prevPage">Previous</a>
+        <a class="page-link" data-page="1">1</a>
+        <a class="page-link" data-page="2">2</a>
+        <a class="page-link" data-page="3">...</a>
+        <a id="nextPage">Next</a>
+        <p id="page-numbers"></p>
+    </div>
     <!-- Product html -->
     <div class="Prod">
         <div class="Filter">
@@ -488,7 +500,7 @@
                 include 'connect.php';
 
 
-                $sql = $dbt->prepare('SELECT * from product order by rand() '); //limit 9
+                $sql = $dbt->prepare('SELECT * from product order by rand()');//limit 6
                 $sql->execute();
                 $Tab_products = $sql->fetchAll();
 
@@ -504,21 +516,16 @@
                 <div id="Price">
                     Price : <span><?php echo $P['Price'] ?>$</span>
                 </div>
-                <a id='OrderLink' href='Ord.php?id_P=<?= $P['id_P'] ?>' oncli>Order Now</a>
-                <a href="" name='CartLink'><img src="" id='addtocart' onclick="()=>affiche(this)"></a>
+                <a id='OrderLink' href='Ord.php?id_P=<?= $P['id_P'] ?>' >Order Now</a>
+                <!-- <a href="" name='CartLink'>
+                    <img src="./Picture/add.png" id='addtocart'  width='30px'>
+                </a> -->
 
             </div>
             <?php } ?>
         </div>
     </div>
-    <div class="pagination" id="pagination">
-                <a id="prevPage">Previous</a>
-                <a class="page-link" data-page="1">1</a>
-                <a class="page-link" data-page="2">2</a>
-                <a class="page-link" data-page="3">...</a>
-                <a id="nextPage">Next</a>
-                <p id="page-numbers"></p>
-        </div>
+
 
     <footer id="Foot">
         <section>
@@ -547,23 +554,13 @@
         <p>©All Right Reserved</p>
     </footer>
 
-    <!-- <h1>simplexml_load_file</h1> -->
-
-    <?php
-    
-        // @$CartLink = 
-
-        
-    
-    
-    ?>
 
     <script src="./Userjs/Prof.js"></script>
     <script src="./Userjs/filter.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script src="./Userjs/tst.js"></script>
-    <script src='./Userjs/backG.js'></script>
+    <!-- <script src="./Userjs/tst.js"></script> -->
+    <!-- <script src='./Userjs/backG.js'></script> -->
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

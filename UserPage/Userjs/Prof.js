@@ -239,7 +239,7 @@ pageLinks.forEach((link) => {
 displayPage(currentPage);
 updatePagination();
 
-function affiche(this){
-  console.log(this)
-}
+// function affiche(this){
+//   console.log(this)
+// }
 
