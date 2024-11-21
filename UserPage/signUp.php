@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="UserStyle/signIn.css">
+    <link rel="stylesheet" href="UserStyle/sign.css">
     <title>Login Page</title>
     <link rel="icon" href="./Picture/hamburger.png">
 </head>
 
 <body>
-
     <div class="wrapper">
         <nav class="nav">
             <div class="nav-logo">
@@ -81,6 +80,7 @@
                     $E->execute(array($mail,$pss));
                     $p = $E->fetch();
                         if($E->rowCount() != 0){
+                            $_SESSION['user_Id'] = $p['user_id'];
                             $_SESSION['F_name'] = $p['F_name'];
                             $_SESSION['L_name'] = $p['L_name'];
                             $_SESSION['email'] = $p['email'];

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="UserStyle/info.css">
+    <link rel="stylesheet" href="UserStyle/inforrr.css">
 </head>
 
 <body>
@@ -38,8 +38,8 @@
 
             if(isset($update)){
 
-                $N = $dbt->prepare('UPDATE Clients set F_name=? , L_name=? , email=? , pass=? , pic=? where email=?');
-                $N->execute(array($F_name , $L_name , $email , $pass, $fileDir , $_GET['email']));
+                $N = $dbt->prepare('UPDATE Clients set F_name=? , L_name=? , email=? , pass=? , pic=? where user_id=?');
+                $N->execute(array($F_name , $L_name , $email , $pass, $fileDir , $_GET['user_id']));
                 if($N->rowCount()!=0){
                     $_SESSION['F_name'] = $F_name;
                     $_SESSION['L_name'] = $L_name;

@@ -132,33 +132,33 @@ let i = 0;
 
 // }
 
-let container = document.querySelector(".IceCream");
-let Product = document.querySelector(".Prod");
-let children = document.querySelectorAll("#container");
-for (let i = 0; i < children.length; i++) {
-  let AddToCart = document.createElement("img");
-  let link = document.createElement("a");
-  let body = document.body;
-  AddToCart.id = "addtocart";
-  AddToCart.name = "ATcart";
-  AddToCart.src = "Picture/add-to-cart.png";
+// let container = document.querySelector(".IceCream");
+// let Product = document.querySelector(".Prod");
+// let children = document.querySelectorAll("#container");
+// for (let i = 0; i < children.length; i++) {
+//   let AddToCart = document.createElement("img");
+//   let link = document.createElement("a");
+//   let body = document.body;
+//   AddToCart.id = "addtocart";
+//   AddToCart.name = "ATcart";
+//   AddToCart.src = "Picture/add-to-cart.png";
 
-  link.name = "CartLink";
-  link.href = "#";
-  link.id = "Clink";
+//   link.name = "CartLink";
+//   link.href = "#";
+//   link.id = "Clink";
 
-  link.style.cssText = "width:40px; position:absolute; right:20px; top:20px";
-  AddToCart.style.cssText = "width:40px;";
+//   link.style.cssText = "width:40px; position:absolute; right:20px; top:20px";
+//   AddToCart.style.cssText = "width:40px;";
 
-  link.appendChild(AddToCart);
+//   link.appendChild(AddToCart);
 
-  children[i].appendChild(link);
+//   children[i].appendChild(link);
 
-  container.appendChild(children[i]);
-  Product.appendChild(container);
+//   container.appendChild(children[i]);
+//   Product.appendChild(container);
 
-  body.appendChild(Product);
-}
+//   body.appendChild(Product);
+// }
 
 // let hhh = document.createElement('h1')
 // hhh.innerHTML = 'simooooooooo'
@@ -242,4 +242,95 @@ updatePagination();
 // function affiche(this){
 //   console.log(this)
 // }
+
+let stars = document.getElementsByClassName('star');
+
+function gfg(n) {
+  remove();
+  for (let i = 0; i < n; i++) {
+      if (n == 1) cls = "one";
+      else if (n == 2) cls = "two";
+      else if (n == 3) cls = "three";
+      else if (n == 4) cls = "four";
+      else if (n == 5) cls = "five";
+      stars[i].className = "star " + cls;
+  }
+  // output.innerText = "Rating is: " + n + "/5";
+}
+
+function remove() {
+  let i = 0;
+  while (i < 5) {
+      stars[i].className = "star";
+      i++;
+  }
+}
+
+let CartOfProduct = document.getElementById('CartOfProduct')
+
+function affiche(id){
+  if(parseInt(CartOfProduct.innerHTML) === 9){
+    CartOfProduct.innerHTML = '+' +parseInt(CartOfProduct.innerHTML)
+  }
+  else{
+    CartOfProduct.innerHTML = parseInt(CartOfProduct.innerHTML)+1
+  }
+
+  let children = document.querySelectorAll("#container");
+  for(ele of children){
+    if(id == ele.children[0].value){
+      // console.log(ele.children[1])//Pic
+      // console.log(ele.children[2].innerHTML)//Title
+      // console.log(ele.children[3].innerHTML)//Price
+      let div = document.createElement('div');
+      let Pic = document.createElement('img'); 
+      let Title = document.createElement('p'); 
+      let Price = document.createElement('p'); 
+      let Link = document.createElement('a');
+
+      Link.innerHTML = 'Go To Orders Page'
+      Link.href = 'Ord.php?id_P='+ele.children[0].value
+      Pic.src = ele.children[1].src;
+      // console.log(ele.children[1])
+      Title.innerHTML = ele.children[2].innerHTML;
+      Price.innerHTML = ele.children[3].innerHTML
+      div.appendChild(Pic)
+      div.appendChild(Title)
+      div.appendChild(Price)
+      div.appendChild(Link)
+
+
+      document.getElementById('AddedItems').appendChild(div);
+    }
+
+    
+  }
+  
+  // console.log(Title)
+}
+// let TotalPrice = document.createElement('p');
+// TotalPrice.innerHTML = '1'
+// let child = document.querySelectorAll("#AddedItems div")
+// for(ele of child){
+//   parseInt(TotalPrice.innerHTML)+=parseInt(ele.children[1].innerHTML)
+// }
+// document.getElementById('AddedItems').appendChild(TotalPrice);
+
+let cart = document.querySelector('.Cart');
+let AddedItems = document.getElementById('AddedItems');
+cart.onclick = ()=>{
+  if(AddedItems.children.length === 0){
+    return
+  }
+  else{
+    AddedItems.style.top = '67px';
+    AddedItems.style.scale = '1'
+    AddedItems.style.transition = '.5s'
+    AddedItems.onmouseleave = ()=>{
+      AddedItems.style.top = '-200px';
+      AddedItems.style.scale = '0'
+      AddedItems.style.transition = '.5s'
+    }
+  }
+}
 

@@ -1,14 +1,14 @@
 *{
     margin: 0;
     padding: 0;
-    color: gold;
+    color: #FBE9D0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 body{
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
-    background-color: #2d3035;
+    background-color: #2B7A78;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,6 +31,7 @@ body h1{
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 .editProfil form input{
     width: 450px;
@@ -38,16 +39,16 @@ body h1{
     padding-top: 18px;
     padding-bottom: 3px;
     border: none;
-    border-bottom: solid 1px  gray ;
+    border-bottom: solid 1px  #1F2833 ;
     background: transparent;
     outline: none;
-    color: white;
 }
 input:focus{
     border-bottom: solid 1px  green ;
 }
 input::placeholder{
     font-size: 15px;
+    color: #1F2833;
 }
 input:focus::placeholder{
     translate: 0px -18px;
@@ -56,33 +57,34 @@ input:focus::placeholder{
 }
 .editProfil form input[type="submit"]{
     width: 100px;
-    background-color: rgba(255, 217, 0, 0.753);
+    background-color: #1F2833;
     padding: 10px 0px;
-    color: white;
     font-size: 15px;
     position: absolute;
     left: 0;
     bottom: -50px;
     cursor: pointer;
+    border-bottom: none;
+    letter-spacing: 2px;
 }
 .editProfil form input[type="submit"]:hover{
-    background-color: rgb(255, 217, 0);
+    background-color: #324964;
     transition: .5s;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 /* back & pointer page style */
 
 #BackLink{
     translate: -600px -100px;
-    background-color: rgb(51, 70, 153);
+    background-color: #1F2833;
     padding: 10px 25px;
     border: none;
     border-radius: 5px;
     text-decoration: none;
-    color: white;
 }
 #BackLink:hover{
-    background-color: rgb(46, 75, 207);
+    background-color: #324964;
     transition: .3s;
 }
 h4{
@@ -90,19 +92,18 @@ h4{
 }
 h4 #homeLink{
     text-decoration: none;
-    color: white;
 }
 h4 #homeLink:hover{
     /* text-decoration: underline gold 2px; */
-    color: gold;
+    color: #1F2833;
     transition: .5s;
 }
 h4 #ThisPage{
     text-decoration: none;
+    color: #1F2833;
 }
 h4 #ThisPage:hover{
-    /* text-decoration: underline gold 2px; */
-    color: white;
+    color: #FBE9D0;
     transition: .5s;
 }
 
@@ -111,23 +112,24 @@ h4 #ThisPage:hover{
     display: none;
 }
 #Replaced_File img{
-    width: 20px;
+    width: 25px;
 }
 #Replaced_File h2{
     font-size: 13px;
-    color: white;
 }
 #Replaced_File{
     width: 100px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(51, 70, 153);
+    background-color: #1F2833;
     padding: 5px;
     translate: 0px 15px;
+    border-radius: 5px;
 }
 #Replaced_File:hover{
-    background-color: rgb(46, 75, 207);
+    background-color: #324964;
     cursor: pointer;
     transition: .5s;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }

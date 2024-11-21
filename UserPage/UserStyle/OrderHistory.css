@@ -1,0 +1,127 @@
+*{
+    /* margin: 0;
+    padding: 0; */
+    color: #FBE9D0;
+    /* overflow-x: hidden; */
+    font-family: 'Sour Gummy','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: #2B7A78;
+}
+#Table , #Table1{
+    width: 100%;
+    /* border-collapse: collapse; */
+}
+tr{
+    text-align: center;
+}
+#Tr1{
+    background-color: #24305E;
+}
+#Tr1 th{
+    padding: 8px 10px;
+}
+#Tr2{
+    background-color: #1F2833;
+}
+#Tr2 td{
+    padding: 5px 10px;
+}
+#Tr2 td:last-child button{
+    cursor: pointer;
+    background-color: #2B7A78;
+    color: #FBE9D0;
+    width: 70%;
+    text-align: center;
+    border: none;
+    outline: none;
+    margin: 0px 2px;
+}
+#Tr2 td:last-child button:hover{
+    background-color: #14afaa;
+    transition: .9s;
+}
+#ProdPic{
+    width: 60px;
+    border-radius: 7px;
+}
+#Nodata{
+    text-align: center;
+    color: #1F2833;
+}
+
+/* Back Link Style */
+.Back{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.Back a{
+    text-decoration: none;
+}
+#BackLink{
+    background-color: #1F2833;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+}
+#BackLink:hover{
+    background-color: #324964;
+    transition: .3s;
+}
+h4 #homeLink:hover{
+    color: #1F2833;
+    transition: .5s;
+}
+h4 #ThisPage{
+    color: #1F2833;
+}
+h4 #ThisPage:hover{
+    color: #FBE9D0;
+    transition: .5s;
+}
+
+/* Pagination style */
+.pagination {
+    text-align: center;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.pagination a {
+    color: #FBE9D0;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #1f2833;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.pagination a:hover {
+    background-color: #1f2833;
+    color: #FBE9D0;
+}
+
+.pagination .active {
+    background-color: #1f2833;
+    color: #FBE9D0;
+}
+.pagination a{
+    cursor: pointer;
+}
+#page-numbers{
+    margin-top: 15px;
+}
+
+::-webkit-scrollbar{
+    width: 11px;
+}
+::-webkit-scrollbar-track{
+    background: #d1e5ff;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#642bff,#14afaa);
+    border-radius: 1px;
+}

@@ -2,7 +2,7 @@
     try{
     $chaine = "mysql:host=localhost;dbname=Restau"; 
     $user="root";
-    $Dbt_pass="Mydb@simo2001!"; 
+    $Dbt_pass=""; 
     $dbt=new PDO ( $chaine, $user , $Dbt_pass );
     // echo 'connected'; 
     }

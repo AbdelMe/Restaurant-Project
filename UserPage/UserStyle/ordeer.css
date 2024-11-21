@@ -1,9 +1,9 @@
 *{
     margin: 0;
     padding: 0;
-    color: white;
+    color: #FBE9D0;
     font-size: 17px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Sour Gummy','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 body{
     display: flex;
@@ -11,13 +11,14 @@ body{
     height: 100vh;
     justify-content: space-around;
     align-items: center;
-    background-color: #2d3035;
+    background-color: #2B7A78;
+    /* background-color: #24305E; */
     position: relative;
 
 }
 .product{
     width: 55%;
-    background-color: rgba(105, 105, 105, 0.664);
+    background-color: #1F2833;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,6 +27,10 @@ body{
     padding-bottom: 35px;
     border-radius: 10px;
     position: relative;
+}
+.product:hover{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    transition: .5s;
 }
 .product .pic img{
     width: 140px;
@@ -44,7 +49,7 @@ body{
     font-size: 18px;
     font-weight: 700;
     margin-top: 5px;
-    color: rgb(0, 252, 0);
+    /* color: rgb(0, 252, 0); */
 }
 .info p:nth-child(3){
     color: red;
@@ -63,13 +68,14 @@ form input[type='text'] , input[type='number']{
     padding-top: 18px;
     padding-bottom: 3px;
     border: none;
-    border-bottom: solid 1px  gray ;
+    border-bottom: solid 1px  #1F2833 ;
     background: transparent;
     outline: none;
     color: white;
 }
 form input::placeholder{
     font-size: 15px;
+    color: #1F2833;
 }
 form input:focus::placeholder{
     translate: 0px -18px;
@@ -77,7 +83,7 @@ form input:focus::placeholder{
     font-size: 15px;
 }
 form input[type='text']:focus , input[type='number']:focus{
-    border-bottom: solid 1px  white ;
+    border-bottom: solid 1px  #FBE9D0 ;
     transition: .5s;
 }
 form input[type='radio']{
@@ -90,17 +96,17 @@ form p{
     width: fit-content;
     /* margin-top: 20px; */
     /* padding: 3px; */
-    font-size: 16px;
+    font-size: 17px;
     padding-bottom: 3px;
-    color: rgb(0, 255, 34);
+    color: #1F2833;
     font-weight: 700;
 }
 form input[type="submit"]{
     width: 150px;
-    background-color: rgb(11, 184, 141);
+    background-color: #1F2833;
     padding: 10px 0px;
-    color: black;
     font-size: 15px;
+    letter-spacing: 3px;
     position: absolute;
     left: 0;
     bottom: -50px;
@@ -108,7 +114,8 @@ form input[type="submit"]{
     cursor: pointer;
 }
 form input[type="submit"]:hover{
-    background-color: rgb(0, 255, 200);
+    background-color: #324964;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     transition: .5s;
 }
 /* .star img{
@@ -134,6 +141,42 @@ form input[type="submit"]:hover{
     /* transition: 1s; */
     /* scale: 1.7; */
     /* border-radius: 5px; */
+}
+
+
+/* Back Link Style */
+.Back{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.Back a{
+    text-decoration: none;
+}
+#BackLink{
+    background-color: #1F2833;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+}
+#BackLink:hover{
+    background-color: #324964;
+    transition: .3s;
+}
+h4 #homeLink:hover{
+    color: #1F2833;
+    transition: .5s;
+}
+h4 #ThisPage{
+    color: #1F2833;
+}
+h4 #ThisPage:hover{
+    color: #FBE9D0;
+    transition: .5s;
 }
 
 
@@ -190,16 +233,16 @@ h4 #ThisPag:hover{
     align-self: flex-start;
 }
 .info a button{
-    background-color: black;
-    border: 1px solid black;
+    background-color: #124E66;
+    border: none;
     border-radius: 5px;
     padding: 4px;
     font-size: small;
     cursor: pointer;
 }
 .info a button:hover{
-    background: transparent;
-    border: 1px solid white;
+    background-color: #2B7A78;
+    border: none;
     transition: 1s;
 }
 .Quantity .Add_Remove{
@@ -227,7 +270,7 @@ h4 #ThisPag:hover{
 }
 
 .Total{
-    background-color: #b89c5c6b;
+    background-color: #124E66;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -238,28 +281,33 @@ h4 #ThisPag:hover{
     border-radius: 10px;
 }
 .Total button{
-    /* display: block; */
     margin: auto;
     width: 100%;
-    /* border: none; 1px solid rgb(0, 255, 200) */
-    background-color: rgb(11, 184, 141);
+    background-color: #2B7A78;
     border: none;
     border-radius: 5px;
     margin: 5px 0px;
     cursor: pointer;
-    color: black;
+    color: #FBE9D0;
     font-weight: 500;
     padding: 4px 0px;
+    text-decoration-line: none;
 
 }
 .Total button:hover{
-    background: rgb(0, 255, 200);
+    background: #14afaa;
     /* border: 1px solid white; */
     /* color: white; */
     transition: .5s;
 }
 .Total div:nth-child(2){
     translate: 0px 10px;
+}
+
+.Descrip{
+    scale: 0;
+    display: none;
+    transition: 1s;
 }
 
 
@@ -303,3 +351,5 @@ h4 #ThisPag:hover{
   .five {
     color: rgb(0, 255, 34);
   }
+
+  

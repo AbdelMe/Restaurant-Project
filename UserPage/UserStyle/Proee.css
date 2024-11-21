@@ -98,6 +98,58 @@ header .Cart{
 }
 
 /* page style */
+#CartOfProduct{
+    width: 20px;
+    height: 20px;
+    padding: .5px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgb(219, 45, 45);
+    z-index: 2000;
+    position: absolute;
+    top: 15px; 
+    right: 55px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#AddedItems{
+    width: 45%;
+    height: 60vh;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #1f2833b0;
+    position: absolute;
+    top: -200px;
+    scale: 0;
+    right: 10px;
+    z-index: 39;
+}
+#AddedItems div{
+    background-color: #24305E;
+    /* background-color: #1F2833; */
+    color: black;
+    margin-top: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+#AddedItems div p:first-child{
+    flex-basis: 50%;
+}
+#AddedItems div img{
+    width: 40px;
+    border-radius: 5px;
+}
+#AddedItems div a{
+    background-color: #1F2833;
+    color: #FBE9D0;
+    padding: 5px;
+}
 
 #sideBar{
     background-color: #1f2833b0;
@@ -160,7 +212,7 @@ header .Cart{
     height: 2px;
     border: none;
     border-radius: 10px;
-    background-color: gold;
+    background-color: #FBE9D0;
     margin: auto;
 }
 .picText{
@@ -173,7 +225,7 @@ header .Cart{
     height: 90px;
     border-radius: 10px;
 }
-.rat{
+/* .rat{
     margin: auto;
 }
 .rat .star{
@@ -182,7 +234,44 @@ header .Cart{
 }
 .star img{
     width: 20px;
+} */
+
+/* Rating */
+.rat{
+    margin: auto;
 }
+.rat .stars{
+    position: relative;
+    /* left: 15px; */
+    /* cursor: pointer; */
+}
+.rat p{
+    font-weight: 700;
+}
+.star {
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+.stars  .one {
+    color: rgb(255, 0, 0);
+  }
+   
+.stars  .two {
+    color: rgb(255, 106, 0);
+  }
+   
+  .three {
+    color: rgb(251, 255, 120);
+  }
+   
+  .four {
+    color: rgb(255, 255, 0);
+  }
+   
+  .five {
+    color: rgb(0, 255, 34);
+  }
 
 .notif{
     position: absolute;
@@ -281,13 +370,13 @@ header .Cart{
 }
 .IceCream #container:hover{
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    translate: 0px -5px;
+    translate: 0px -20px;
     transition: .5s;
 }
 .IceCream #container #ProductPic{
     width: 150px ;
     height: 150px ;
-    border: #2d3035 10px solid;
+    /* border: #2d3035 10px solid; */
     border-radius: 50%;
     translate: 0px -40px;
 }
@@ -295,7 +384,8 @@ header .Cart{
     /* scale: 1.1; */
     transition: 1s;
     /* border: #2d3035 1px solid; */
-    border: rgb(0, 255, 191) 10px solid;
+    /* border: #14afaa 10px solid; */
+    box-shadow: #14afaa 0px 19px 38px, #14afaa 0px 15px 12px;
     cursor: pointer;
 }
 #container #OrderLink{
@@ -318,13 +408,13 @@ header .Cart{
 
 #container  p {
     translate: 0px -20px;
-    font-size: 18px;
+    font-size: 20px;
     flex-basis: 80%;
     padding: 0px 20px;
 }
 #container #Price {
     translate: 0px -10px;
-    font-size: 18px;
+    font-size: 20px;
 }
 /* #container p , #Price{
     color: #44318D;
@@ -407,8 +497,17 @@ header .Cart{
 }
 
 
+
+
 /* Add To Cart  */
 #addtocart{
+    cursor: pointer;
+    width: 40px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.Cart{
     cursor: pointer;
 }
 
@@ -458,14 +557,14 @@ header .Cart{
 
 
 ::-webkit-scrollbar{
-    width: 11px;
+    width: 8px;
 }
 ::-webkit-scrollbar-track{
     background: #d1e5ff;
 }
 ::-webkit-scrollbar-thumb{
-    background: linear-gradient(#642bff,#ff22e6);
-    border-radius: 10px;
+    background: linear-gradient(#642bff,#14afaa);
+    border-radius: 1px;
 }
 
 
@@ -480,22 +579,22 @@ header .Cart{
 }
 
 .pagination a {
-    color: #007BFF;
+    color: #FBE9D0;
     padding: 8px 16px;
     text-decoration: none;
-    border: 1px solid #007BFF;
+    border: 1px solid #1f2833;
     margin: 0 5px;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
 .pagination a:hover {
-    background-color: #007BFF;
-    color: white;
+    background-color: #1f2833;
+    color: #FBE9D0;
 }
 
 .pagination .active {
-    background-color: #007BFF;
-    color: white;
+    background-color: #1f2833;
+    color: #FBE9D0;
 }
 .pagination a{
     cursor: pointer;
@@ -503,3 +602,6 @@ header .Cart{
 #page-numbers{
     margin-top: 15px;
 }
+
+
+/* pricing Style */

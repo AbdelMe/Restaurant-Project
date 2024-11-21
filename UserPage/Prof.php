@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="UserStyle/Slide.css">
     <link rel="stylesheet" href="UserStyle/backG.css">
-    <link rel="stylesheet" href="UserStyle/Prof.css">
+    <link rel="stylesheet" href="UserStyle/Proee.css">
     <link rel="icon" href="./Picture/hamburger.png">
 
 </head>
@@ -22,6 +22,7 @@
         session_start();
     ?>
     <div class="header">
+        <div id='CartOfProduct'>0</div>
         <header>
             <div class="Logo_Search">
                 <a href="prof.php"><img src="Picture/logolavilla-new_copy-2.png" alt=""></a>
@@ -36,14 +37,15 @@
                     <img src="./Picture/picMe/profile.png" alt="" id='prof'>
                     <img src="./Picture/picMe/notification-bell.png" id="notification">
                     <a href="signUp.php"><img src="./Picture/picMe/log-out.png" id="orders"></a>
-                    <!-- <img src="Picture/shopping-cart.png" alt="" class='Cart'> -->
+                    <img src="Picture/shopping-cart.png" alt="" class='Cart'>
                 </div>
             </div>
         </header>
     </div>
+    <div id='AddedItems'></div>
     <div id="sideBar">
         <div class="picSideBar">
-            <img src="Picture/backG_Pic/wallpaperflare.com_wallpaper.jpg" alt="">
+            <img src="Picture/logolavilla-new_copy-2.png" alt="">
         </div>
         <div class="services">
             <h1>services</h1>
@@ -53,27 +55,27 @@
         </div>
         <div class="links">
             <h1>Profil</h1>
-            <a href="info.php?email=<?=  $_SESSION['email'] ?>">Your Information</a>
-            <a href="">Orders History</a>
-            <a href="">Orders</a>
+            <a href="info.php?user_id=<?=  $_SESSION['user_Id'] ?>">Your Information</a>
+            <a href="OrderHistory.php?user_id=<?=  $_SESSION['user_Id'] ?>">Orders History</a>
+            <a href="">Suggested Food</a>
             <!-- <a href="">Log Out</a> -->
         </div>
     </div>
     <!-- Notification Html -->
     <div class="notif">
         <div class="picText">
-            <img src="img/Lammtagine med smak av Marocko på mitt vis - Zeinas Kitchen.jpeg" id="TaginPic">
+            <img src="Picture/logolavilla-new_copy-2.png" id="TaginPic">
             <span>New Food Is Ready <br> Order Now!</span>
         </div>
         <hr>
         <div class="rat">
             <p>How was your last order ?</p>
-            <div class="star">
-                <img src="Picture/Star/star (2).png" alt="">
-                <img src="Picture/Star/star (2).png" alt="">
-                <img src="Picture/Star/star (2).png" alt="">
-                <img src="Picture/Star/star (2).png" alt="">
-                <img src="Picture/Star/star (2).png" alt="">
+            <div class="stars">
+                <span onclick="gfg(1)"  class='star'>★</span>
+                <span onclick="gfg(2)"  class='star'>★</span>
+                <span onclick="gfg(3)"  class='star'>★</span>
+                <span onclick="gfg(4)"  class='star'>★</span>
+                <span onclick="gfg(5)"  class='star'>★</span>
             </div>
         </div>
     </div>
@@ -454,7 +456,7 @@
             <!-- </div> -->
             <!-- </div> -->
             <div class="type">
-                <label for="" class="TitleLabel">Type: </label>
+                <label for="" class="TitleLabel">Food Name: </label>
                 <div>
                     <input type="text" placeholder="Pizza,Icecream,Juice..." id="inpt">
                 </div>
@@ -473,15 +475,7 @@
                     <!-- <label >To </label><input type="number"> -->
                 </div>
             </div>
-            <!-- <div class="kitchenCountry">
-                <label for="">Country: </label>
-                <div>
-                    <label for="">Morocco</label> <input type="checkbox">
-                    <label for="">Italy</label> <input type="checkbox">
-                    <label for="">Usa</label> <input type="checkbox">
-                </div>
-            </div> -->
-            <div class="Date">
+            <!-- <div class="Date">
                 <label for="" class="TitleLabel">Posted Date:</label>
                 <div>
                     <label class="DateLabel">This Day</label> <input type="radio" name="Rdate" value="">
@@ -489,9 +483,24 @@
                     <label class="DateLabel">This Month</label> <input type="radio" name="Rdate" value="">
                 </div>
             </div>
+            
             <div class="search">
                 <button id="btn">Search</button>
-            </div>
+            </div> -->
+            <!-- <div class="wrapper">
+                <div class="multi-range-slider">
+                    <input type="range" id="input-left" min="0" max="1000" value="0">
+                    <input type="range" id="input-right" min="0" max="1000" value="0">
+                    <div class="slider">
+                    <div class="track"></div>
+                    <div class="range"></div>
+                    </div>
+                </div>
+                <div class="price__wrapper">
+                    <span class="price-from">50</span>
+                    <span class="price-to">500</span>
+                </div>
+        </div> -->
         </div>
         <div class="Food IceCream Juice">
 
@@ -511,15 +520,16 @@
                 foreach($Tab_products as $P){
                     ?>
             <div id="container" class='contai'>
+                <input type="number" hidden value="<?php echo $P['id_P'] ?>" id='InptId_P'>
                 <img src="<?php echo '../AdminPage/' . $P['pic'] ?>" id="ProductPic">
                 <p><?php echo $P['Title'] ?></p>
                 <div id="Price">
                     Price : <span><?php echo $P['Price'] ?>$</span>
                 </div>
                 <a id='OrderLink' href='Ord.php?id_P=<?= $P['id_P'] ?>' >Order Now</a>
-                <!-- <a href="" name='CartLink'>
-                    <img src="./Picture/add.png" id='addtocart'  width='30px'>
-                </a> -->
+                <!-- <button name='CartLink' > -->
+                    <img src="./Picture/add-to-cart.png" id='addtocart'  onclick="affiche(<?php echo $P['id_P'] ?>)">
+                <!-- </button> -->
 
             </div>
             <?php } ?>
@@ -555,8 +565,8 @@
     </footer>
 
 
-    <script src="./Userjs/Prof.js"></script>
-    <script src="./Userjs/filter.js"></script>
+    <script src="./Userjs/Profa.js"></script>
+    <script src="./Userjs/filt.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- <script src="./Userjs/tst.js"></script> -->

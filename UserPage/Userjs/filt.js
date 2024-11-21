@@ -55,6 +55,7 @@ let submit = document.getElementById("btn");
 // function BigerThanNumber(){
 
 // }
+let children = document.querySelectorAll("#container");
 let BigerThan = document.getElementById("BigerThan");
 let LessThan = document.getElementById("LessThan");
 
@@ -62,10 +63,11 @@ LessThan.oninput = () => {
   let filterByPrice = document.querySelectorAll('.price input[type="number"]');
 
   for (ele of children) {
-    let b = ele.children[2];
+    let b = ele.children[3];
     let c = b.firstElementChild;
     let n = c.innerHTML;
     let z = parseInt(n);
+
 
     if (filterByPrice[0].value >= z) {
       ele.style.display = "flex";
@@ -75,14 +77,16 @@ LessThan.oninput = () => {
   }
 };
 
+
 BigerThan.oninput = () => {
   let filterByPrice = document.querySelectorAll('.price input[type="number"]');
 
   for (ele of children) {
-    let b = ele.children[2];
+    let b = ele.children[3];
     let c = b.firstElementChild;
     let n = c.innerHTML;
     let z = parseInt(n);
+
 
     if (filterByPrice[1].value <= z) {
       ele.style.display = "flex";
@@ -92,14 +96,12 @@ BigerThan.oninput = () => {
   }
 };
 
+
 let inpt = document.getElementById("inpt");
-
 inpt.addEventListener("input", () => {
-  let children = document.querySelectorAll("#container");
-
   for (ele of children) {
-    let LowerValue = inpt.value;
-    let Title = ele.children[1].innerHTML;
+    let LowerValue = inpt.value.toLowerCase();
+    let Title = ele.children[2].innerHTML;
     let LowerTitle = Title.toLowerCase();
     if (LowerTitle.includes(LowerValue)) {
       ele.style.display = "flex";

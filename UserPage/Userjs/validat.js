@@ -1,6 +1,7 @@
 let Add = document.getElementById("Add");
 let Remove = document.getElementById("Remove");
 let Q_Product = document.getElementById("Q_Product");
+let Qte = document.getElementById('Qte');
 
 let Totalitems = document.getElementById("Totalitems");
 let TotalPrice = document.getElementById("TotalPrice");
@@ -16,9 +17,9 @@ TextInpt.value = parseInt(TotalPrice.innerHTML);
 Add.onclick = () => {
   Q_Product.innerHTML = parseInt(Q_Product.innerHTML) + 1;
   Totalitems.innerHTML = parseInt(Q_Product.innerHTML);
-  TotalPrice.innerHTML =
-    parseInt(Cr_Price.innerHTML) * parseInt(Q_Product.innerHTML);
+  TotalPrice.innerHTML =parseInt(Cr_Price.innerHTML) * parseInt(Q_Product.innerHTML);
   TextInpt.value = parseInt(Cr_Price.innerHTML) * parseInt(Q_Product.innerHTML);
+  Qte.value = document.getElementById('Q_Product').innerHTML
 };
 
 Remove.onclick = () => {
@@ -27,10 +28,9 @@ Remove.onclick = () => {
   } else {
     Q_Product.innerHTML = parseInt(Q_Product.innerHTML) - 1;
     Totalitems.innerHTML = parseInt(Q_Product.innerHTML);
-    TotalPrice.innerHTML =
-      parseInt(Cr_Price.innerHTML) * parseInt(Q_Product.innerHTML);
-    TextInpt.value =
-      parseInt(Cr_Price.innerHTML) * parseInt(Q_Product.innerHTML);
+    TotalPrice.innerHTML =parseInt(Cr_Price.innerHTML) * parseInt(Q_Product.innerHTML);
+    TextInpt.value =parseInt(Cr_Price.innerHTML) * parseInt(Q_Product.innerHTML);
+    Qte.value = document.getElementById('Q_Product').innerHTML
   }
 };
 
@@ -87,10 +87,9 @@ function remove() {
 
 
 
-
 let ppp = document.getElementById("C_Message");
 if (ppp.style.display == "block") {
-  console.log("ist work");
+  // console.log("ist work");
   let b = document.createElement("img");
   b.src = "Picture/fermer.png";
   b.id = "simoooo";
@@ -111,3 +110,18 @@ ccc.onclick = () => {
   ccc.style.scale = "0";
   ccc.style.transition = ".4s";
 };
+
+
+// let viewMore = document.querySelector('#viewM');
+// viewMore.addEventListener('click',()=>{
+//   // document.querySelector('.Total').classList.remove('Total')
+//   let v = document.querySelector('.Total')
+//   document.querySelector('.product').removeChild(v);
+//   document.querySelector('.Total').style.display = 'block'
+//   document.querySelector('.Total').style.scale = '1'
+//   document.querySelector('.Total').style.transition = '1s'
+
+
+// })
+
+
