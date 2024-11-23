@@ -160,10 +160,7 @@ let i = 0;
 //   body.appendChild(Product);
 // }
 
-// let hhh = document.createElement('h1')
-// hhh.innerHTML = 'simooooooooo'
-// let bbb = document.querySelector('.background').appendChild(hhh)
-// document.body.appendChild(bbb)
+
 
 
 const cardsPerPage = 6; // Number of cards to show per page
@@ -267,6 +264,11 @@ function remove() {
 }
 
 let CartOfProduct = document.getElementById('CartOfProduct')
+let table = document.createElement('table')
+let LastTr = document.createElement('tr');
+LastTr.innerHTML = 'Total is : '
+LastTr.style.textAlign = 'center'
+table.style.width = '100%'
 
 function affiche(id){
   if(parseInt(CartOfProduct.innerHTML) === 9){
@@ -279,35 +281,73 @@ function affiche(id){
   let children = document.querySelectorAll("#container");
   for(ele of children){
     if(id == ele.children[0].value){
+      // let ListProducts = [{idP : ele.children[0].value , Tit : ele.children[2].innerHTML, Pr : parseInt(ele.children[3].children[0].innerHTML)}];
+   
+      // localStorage.setItem('data', JSON.stringify(ListProducts));
+      // let ListProductsFinal = JSON.parse(localStorage.getItem('data'));
+      // for(ele of ListProductsFinal){
+        
+      // }
+
       // console.log(ele.children[1])//Pic
       // console.log(ele.children[2].innerHTML)//Title
       // console.log(ele.children[3].innerHTML)//Price
-      let div = document.createElement('div');
+      // let div = document.createElement('div');
       let Pic = document.createElement('img'); 
-      let Title = document.createElement('p'); 
-      let Price = document.createElement('p'); 
+      // let Title = document.createElement('p'); 
+      // let Price = document.createElement('p'); 
       let Link = document.createElement('a');
 
-      Link.innerHTML = 'Go To Orders Page'
+      Link.innerHTML = 'Order Now'
       Link.href = 'Ord.php?id_P='+ele.children[0].value
-      Pic.src = ele.children[1].src;
-      // console.log(ele.children[1])
-      Title.innerHTML = ele.children[2].innerHTML;
-      Price.innerHTML = ele.children[3].innerHTML
-      div.appendChild(Pic)
-      div.appendChild(Title)
-      div.appendChild(Price)
-      div.appendChild(Link)
+      Pic.src = ele.children[1].src
+      Pic.style.width = "50px"
+      Pic.style.borderRadius = '5px'
+
+      let td1 = document.createElement('td');
+      let td2 = document.createElement('td');
+      let td3 = document.createElement('td');
+      let td4 = document.createElement('td');
+
+      td1.appendChild(Pic)
+      td2.innerHTML = ele.children[2].innerHTML
+      td3.innerHTML = "Price: " +parseInt(ele.children[3].children[0].innerHTML) + '$'
+      td4.appendChild(Link)
 
 
-      document.getElementById('AddedItems').appendChild(div);
+      let tr = document.createElement('tr');
+      tr.style.textAlign = 'center'
+
+      tr.appendChild(td1)
+      tr.appendChild(td2)
+      tr.appendChild(td3)
+      tr.appendChild(td4)
+
+      table.appendChild(tr)
+
+
+      // Title.innerHTML = ele.children[2].innerHTML;
+      // Price.innerHTML = ele.children[3].innerHTML
+      // div.appendChild(Pic)
+      // div.appendChild(Title)
+      // div.appendChild(Price)
+      // div.appendChild(Link)
+
+
+      document.getElementById('AddedItems').appendChild(table);
+      // document.getElementById('AddedItems').appendChild(div);
     }
 
-    
   }
-  
+  table.appendChild(LastTr)
   // console.log(Title)
 }
+
+
+
+
+
+
 // let TotalPrice = document.createElement('p');
 // TotalPrice.innerHTML = '1'
 // let child = document.querySelectorAll("#AddedItems div")
@@ -333,4 +373,6 @@ cart.onclick = ()=>{
     }
   }
 }
+
+
 

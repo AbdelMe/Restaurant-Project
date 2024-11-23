@@ -11,8 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="UserStyle/Slide.css">
     <link rel="stylesheet" href="UserStyle/backG.css">
-    <link rel="stylesheet" href="UserStyle/Proee.css">
-    <link rel="icon" href="./Picture/hamburger.png">
+    <link rel="stylesheet" href="UserStyle/Profel.css">
+    <link rel="icon" href="./Picture/food.png">
 
 </head>
 
@@ -565,7 +565,7 @@
     </footer>
 
 
-    <script src="./Userjs/Profa.js"></script>
+    <script src="./Userjs/Profaill.js"></script>
     <script src="./Userjs/filt.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 

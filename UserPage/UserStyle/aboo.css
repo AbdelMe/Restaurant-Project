@@ -1,9 +1,9 @@
 *{
     margin: 0;
     padding: 0;
-    color: rgb(255, 255, 255);
+    color: #1F2833;
     font-size: 17px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Sour Gummy','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 body{
     display: flex;
@@ -11,7 +11,7 @@ body{
     width: 100%;
     justify-content: center;
     align-items: center;
-    background-color: #2d3035;
+    background-color: #2B7A78;
     position: relative;
 
 }
@@ -24,10 +24,10 @@ section{
     width: 500px;
     height: 80vh;
     border-radius: 78% 22% 34% 66% / 53% 49% 51% 47% ;
-    box-shadow:0px 0px 10px rgba(0, 255, 255, 0.61) ,
-                0px 0px 20px rgba(0, 255, 255, 0.61) ,
-                0px 0px 40px rgba(0, 255, 255, 0.61) ,
-                0px 0px 80px rgba(0, 255, 255, 0.61);
+    box-shadow:0px 0px 10px #14afaa ,
+                0px 0px 20px #14afaa ,
+                0px 0px 40px #14afaa ,
+                0px 0px 80px #14afaa;
 }
 .picture{
     flex-basis: 30%;
@@ -40,25 +40,24 @@ section{
 }
 .ContactSide div h1 span:nth-child(1){
     font-size: 50px;
-    color: white;
     letter-spacing: 5px;
-    text-shadow: 0px 0px 10px cyan ,
-    0px 0px 20px cyan ,
-    0px 0px 40px cyan ,
-    0px 0px 80px cyan;
+    text-shadow: 0px 0px 10px #14afaa ,
+    0px 0px 20px #14afaa ,
+    0px 0px 40px #14afaa ,
+    0px 0px 80px #14afaa;
 
 }
 .ContactSide div h1 span:nth-child(2){
     font-size: 50px;
-    color: white;
+    color: #FBE9D0;
     letter-spacing: 5px;
-    text-shadow:0px 0px 10px gold ,
-    0px 0px 20px gold ,
-    0px 0px 40px gold ,
-    0px 0px 80px gold;
+    text-shadow:0px 0px 10px #265b9c ,
+    0px 0px 20px #265b9c ,
+    0px 0px 40px #265b9c ,
+    0px 0px 80px #265b9c;
 }
 .ContactSide div{
-    border-left: 2px rgb(0, 255, 191) solid;
+    border-left:  solid;
     padding: 15px 0px;
     padding-left: 20px;
 }
@@ -72,25 +71,29 @@ section{
 }
 .ContactSide div a{
     text-decoration: none;
-    background-color: rgb(2, 151, 114);
-    border: 1px solid rgb(2, 151, 114);
+    background-color: #1F2833;
+    /* border: 1px solid #2B7A78; */
+    border: none;
     padding: 5px;
     display: block;
     width: 100px;
     text-align: center;
     translate: 0px 5px;
     border-radius: 7px;
-    font-weight: 600;    
+    font-weight: 600;  
+    color: #FBE9D0;
+  
 }
 .ContactSide div a:hover{
-    background: rgb(0, 255, 191);
+    background: #324964;
     transition: .5s;
-    border: 1px solid rgb(0, 255, 191);
+    /* border: 1px solid #14afaa; */
     padding: 5px;
     font-weight: 600;
     color: black;
-    box-shadow:0px 0px 10px rgba(0, 255, 255, 0.589) ,
-                0px 0px 20px rgba(0, 255, 255, 0.589) ,
-                0px 0px 40px rgba(0, 255, 255, 0.589) ,
-                0px 0px 80px rgba(0, 255, 255, 0.589);
+    cursor: pointer;
+    box-shadow:0px 0px 10px #14afaa ,
+            0px 0px 20px #14afaa ,
+            0px 0px 40px #14afaa ,
+            0px 0px 80px #14afaa;
 }

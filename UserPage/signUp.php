@@ -7,7 +7,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="UserStyle/sign.css">
     <title>Login Page</title>
-    <link rel="icon" href="./Picture/hamburger.png">
+    <link rel="icon" href="./Picture/food.png">
 </head>
 
 <body>
@@ -94,9 +94,6 @@
                 else echo "<p name='C_Message' id='C_Message' style='display:block;background-color: rgba(250, 156, 156, 0.795);font-weight: 500;position: absolute;top: 0;'>Email Or Password is Empty</p>";
 
             }  
-
-
-
 
         ?>
 

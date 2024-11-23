@@ -127,18 +127,45 @@ header .Cart{
     right: 10px;
     z-index: 39;
 }
-#AddedItems div{
+/* #AddedItems div{
     background-color: #24305E;
-    /* background-color: #1F2833; */
-    color: black;
     margin-top: 5px;
     padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+} */
 
+
+#AddedItems table tr{
+    background-color: #24305E;
 }
-#AddedItems div p:first-child{
+
+
+#AddedItems table tr td a{
+    cursor: pointer;
+    background-color: #2B7A78;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+#AddedItems table tr td a:hover{
+    background-color: #14afaa;
+    transition: .9s;
+}
+#AddedItems table tr td{
+    margin-top: 5px;
+    padding: 5px;
+}
+#AddedItems table tr td:last-child{
+    width: 20%;
+}
+#AddedItems table tr td:nth-child(3){
+    width: 15%;
+}
+
+
+/* #AddedItems div p:first-child{
     flex-basis: 50%;
 }
 #AddedItems div img{
@@ -149,7 +176,7 @@ header .Cart{
     background-color: #1F2833;
     color: #FBE9D0;
     padding: 5px;
-}
+} */
 
 #sideBar{
     background-color: #1f2833b0;
