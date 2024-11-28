@@ -117,7 +117,7 @@ body{
     padding: 10px 0;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 .top span a{
     font-weight: 500;
@@ -145,7 +145,7 @@ header{
     border-radius: 30px;
     outline: none;
     transition: .2s ease;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 .input-field:hover, .input-field:focus{
     background: rgba(255, 255, 255, 0.25);
@@ -165,7 +165,7 @@ header{
     color: black;
     height: 45px;
     width: 100%;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     border: none;
     border-radius: 30px;
     outline: none;

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="UserStyle/sign.css">
-    <title>Login Page</title>
+    <link rel="stylesheet" href="UserStyle/signn.css">
+    <title>Home</title>
     <link rel="icon" href="./Picture/food.png">
 </head>
 
@@ -19,7 +19,7 @@
             <div class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="signUp.php" class="link active">Home</a></li>
-                    <li><a href="#" class="link">Services</a></li>
+                    <!-- <li><a href="#" class="link">Services</a></li> -->
                     <li><a href="contactUs.php" class="link">contact Us</a></li>
                     <li><a href="about.php" class="link">About</a></li>
                 </ul>
@@ -50,11 +50,11 @@
                     <i class="bx bx-lock-alt"></i>
                 </div>
                 <div class="input-box">
-                    <input type="submit" class="submit" value="Sign In" name='login'>
+                    <input type="submit" class="submit" value="Sign In" name='login' >
                 </div>
                 <div class="two-col">
                     <div class="one">
-                        <input type="checkbox" id="login-check">
+                        <input type="checkbox" id="login-check" name='check'>
                         <label for="login-check"> Remember Me</label>
                     </div>
                     <div class="two">
@@ -74,7 +74,7 @@
 
 
             if(isset($login)){
-                if(!empty($mail) && !empty($pss)){
+                if(!empty($mail) && !empty($pss)){//&& !empty($_POST['check'])
                     
                 $E = $dbt->prepare('SELECT * from Clients where email=? and pass=?');
                     $E->execute(array($mail,$pss));
@@ -128,11 +128,11 @@
                     <i class="bx bx-lock-alt"></i>
                 </div>
                 <div class="input-box">
-                    <input type="submit" class="submit" value="Register" name='sign_up'>
+                    <input type="submit" class="submit" value="Register" name='sign_up' >
                 </div>
                 <div class="two-col">
                     <div class="one">
-                        <input type="checkbox" id="register-check">
+                        <input type="checkbox" id="register-check" >
                         <label for="register-check"> Remember Me</label>
                     </div>
                     <!-- <div class="two">
@@ -231,7 +231,7 @@
 
 
 
-    <script src='./Userjs/signUp.js'></script>
+    <script src='./Userjs/signUpp.js'></script>
 
 </body>
 

@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="UserStyle/Slide.css">
     <link rel="stylesheet" href="UserStyle/backG.css">
-    <link rel="stylesheet" href="UserStyle/Profel.css">
+    <link rel="stylesheet" href="UserStyle/Poofffell.css">
     <link rel="icon" href="./Picture/food.png">
 
 </head>
@@ -20,6 +20,11 @@
     <?php
         include ('connect.php');
         session_start();
+
+        $sql = $dbt->prepare('SELECT * from Notifications order by rand() limit 1');
+        $sql->execute();
+        $Notifs = $sql->fetch();
+
     ?>
     <div class="header">
         <div id='CartOfProduct'>0</div>
@@ -36,6 +41,7 @@
                 <div class='divPic'>
                     <img src="./Picture/picMe/profile.png" alt="" id='prof'>
                     <img src="./Picture/picMe/notification-bell.png" id="notification">
+                    <div id='Notif_'></div>
                     <a href="signUp.php"><img src="./Picture/picMe/log-out.png" id="orders"></a>
                     <img src="Picture/shopping-cart.png" alt="" class='Cart'>
                 </div>
@@ -57,19 +63,34 @@
             <h1>Profil</h1>
             <a href="info.php?user_id=<?=  $_SESSION['user_Id'] ?>">Your Information</a>
             <a href="OrderHistory.php?user_id=<?=  $_SESSION['user_Id'] ?>">Orders History</a>
-            <a href="">Suggested Food</a>
+            <!-- <a href="">Suggested Food</a> -->
             <!-- <a href="">Log Out</a> -->
         </div>
     </div>
     <!-- Notification Html -->
     <div class="notif">
         <div class="picText">
-            <img src="Picture/logolavilla-new_copy-2.png" id="TaginPic">
-            <span>New Food Is Ready <br> Order Now!</span>
+            <img src="<?php if($sql->rowCount() === 0) echo './Picture/error404.png'; else echo '../AdminPage/' . $Notifs['picture']; ?>" id="TaginPic">
+            <span id="Notif_Title">
+                <?php if($sql->rowCount() === 0) echo 'NO New Pruducts'; else echo $Notifs['Title'] ?>
+            </span>
         </div>
+        <a href="#AllProduct" id="More_">Check More</a>
+
+        <!-- <img src="Picture/New.png" alt="" width='50px'> -->
+
+        <!-- <div class="Notif_pagination" id="pagination">
+            <a id="prevPage">Previous</a>
+            <a class="page-link" data-page="1">1</a>
+            <a class="page-link" data-page="2">2</a>
+            <a class="page-link" data-page="3">...</a>
+            <a id="nextPage">Next</a>
+            <p id="page-numbers"></p>
+        </div> -->
+
         <hr>
         <div class="rat">
-            <p>How was your last order ?</p>
+            <p>What's Your Rating Of This Product ?</p>
             <div class="stars">
                 <span onclick="gfg(1)"  class='star'>★</span>
                 <span onclick="gfg(2)"  class='star'>★</span>
@@ -442,65 +463,47 @@
         <p id="page-numbers"></p>
     </div>
     <!-- Product html -->
-    <div class="Prod">
+    <div class="Prod" id="AllProduct">
         <div class="Filter">
             <h1>Filter By</h1>
-            <!-- <div class="name">
-                <label for="">Name: </label>
-                <div id="FilterByName">
-                    Food <input type="radio" name="Rname" value="pizza"><br>
-                    Juice <input type="radio" name="Rname" value="juice"><br>
-                    IceCream <input type="radio" name="Rname" value="icecream"> -->
-
-            <!-- name <input type="text" id="inpt"> -->
-            <!-- </div> -->
-            <!-- </div> -->
-            <div class="type">
-                <label for="" class="TitleLabel">Food Name: </label>
-                <div>
-                    <input type="text" placeholder="Pizza,Icecream,Juice..." id="inpt">
-                </div>
-            </div>
-            <div class="price">
-                <label class="TitleLabel">price Less Than: </label>
-                <div>
-                    <!-- <label >From </label> -->
-                    <input type="number" placeholder="Price" id="LessThan"><br>
-                    <!-- <label >To </label><input type="number"> -->
-                </div>
-                <label class="TitleLabel">price Biger Than: </label>
-                <div>
-                    <!-- <label >From </label> -->
-                    <input type="number" placeholder="Price" id="BigerThan"><br>
-                    <!-- <label >To </label><input type="number"> -->
-                </div>
-            </div>
-            <!-- <div class="Date">
-                <label for="" class="TitleLabel">Posted Date:</label>
-                <div>
-                    <label class="DateLabel">This Day</label> <input type="radio" name="Rdate" value="">
-                    <label class="DateLabel">This Week</label> <input type="radio" name="Rdate" value="">
-                    <label class="DateLabel">This Month</label> <input type="radio" name="Rdate" value="">
-                </div>
-            </div>
-            
-            <div class="search">
-                <button id="btn">Search</button>
-            </div> -->
-            <!-- <div class="wrapper">
-                <div class="multi-range-slider">
-                    <input type="range" id="input-left" min="0" max="1000" value="0">
-                    <input type="range" id="input-right" min="0" max="1000" value="0">
-                    <div class="slider">
-                    <div class="track"></div>
-                    <div class="range"></div>
+            <div id="F-ele">
+                <div class="type">
+                    <label for="" class="TitleLabel">Food Name: </label>
+                    <div>
+                        <input type="text" placeholder="Pizza,Icecream,Juice..." id="inpt">
                     </div>
                 </div>
-                <div class="price__wrapper">
-                    <span class="price-from">50</span>
-                    <span class="price-to">500</span>
+                <div class="price">
+                    <label class="TitleLabel">price Less Than: </label>
+                    <div>
+                        <!-- <label >From </label> -->
+                        <input type="number" placeholder="Price" id="LessThan"><br>
+                        <!-- <label >To </label><input type="number"> -->
+                    </div>
+                    <label class="TitleLabel">price Biger Than: </label>
+                    <div>
+                        <!-- <label >From </label> -->
+                        <input type="number" placeholder="Price" id="BigerThan"><br>
+                        <!-- <label >To </label><input type="number"> -->
+                    </div>
                 </div>
-        </div> -->
+                <div class="Date">
+                    <label for="" class="TitleLabel">Posted Date:</label>
+                    <div>
+                        <select name="" id="SelectOpt" >
+                            <option>--- All Time ---</option>
+                            <option value="" id='opt1'>This Day</option>
+                            <option value="" id='opt2'>This Week</option>
+                            <option value="" id='opt3'>This Month</option>
+                            <option value="" id='opt4'>This Year</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="search">
+                    <button id="btn">Search</button>
+                </div>
+            </div>
         </div>
         <div class="Food IceCream Juice">
 
@@ -521,6 +524,7 @@
                     ?>
             <div id="container" class='contai'>
                 <input type="number" hidden value="<?php echo $P['id_P'] ?>" id='InptId_P'>
+                <span hidden><?php echo $P['Posted_Date'] ?></span>
                 <img src="<?php echo '../AdminPage/' . $P['pic'] ?>" id="ProductPic">
                 <p><?php echo $P['Title'] ?></p>
                 <div id="Price">
@@ -557,16 +561,16 @@
             </div>
             <div>
                 <h1>Services</h1>
-                <p><a href="#">About</a></p>
-                <p><a href="#"></a>Contact Us</p>
+                <p><a href="about.php">About</a></p>
+                <p><a href="ContactUs.php">Contact Us</a></p>
             </div>
         </section>
         <p>©All Right Reserved</p>
     </footer>
 
 
-    <script src="./Userjs/Profaill.js"></script>
-    <script src="./Userjs/filt.js"></script>
+    <script src="./Userjs/Profaa.js"></script>
+    <script src="./Userjs/filtt.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- <script src="./Userjs/tst.js"></script> -->

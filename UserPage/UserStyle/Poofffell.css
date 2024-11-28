@@ -97,6 +97,14 @@ header .Cart{
     translate: 50px;
 }
 
+.des{
+    background-color: #1f283356;
+    border-radius: 5px;
+    /* background: rgba(39, 39, 39, 0.4); */
+    padding: 10px;
+    translate: -30px;
+}
+
 /* page style */
 #CartOfProduct{
     width: 20px;
@@ -113,6 +121,24 @@ header .Cart{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#Notif_{
+    width: 15px;
+    height: 15px;
+    padding: .5px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgb(219, 45, 45);
+    z-index: 2000;
+    position: absolute;
+    top: 18px; 
+    right: 218px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
 }
 
 #AddedItems{
@@ -238,6 +264,7 @@ header .Cart{
     width: 80%;
     height: 2px;
     border: none;
+    transform: translateY(15px);
     border-radius: 10px;
     background-color: #FBE9D0;
     margin: auto;
@@ -252,20 +279,25 @@ header .Cart{
     height: 90px;
     border-radius: 10px;
 }
-/* .rat{
-    margin: auto;
+.notif #More_{
+    background-color: #22354b;
+    padding: 3px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    align-self: center;
 }
-.rat .star{
-    display: flex;
-    justify-content: center;
-}
-.star img{
-    width: 20px;
-} */
 
-/* Rating */
+
+
+
+
+
+/*Notification Rating */
 .rat{
     margin: auto;
+    /* transform: translateY(35px); */
 }
 .rat .stars{
     position: relative;
@@ -437,7 +469,7 @@ header .Cart{
     translate: 0px -20px;
     font-size: 20px;
     flex-basis: 80%;
-    padding: 0px 20px;
+    padding: 0px 5px;
 }
 #container #Price {
     translate: 0px -10px;
@@ -451,7 +483,7 @@ header .Cart{
 
 .Prod .Filter{
     width: 20%;
-    height: 80vh;
+    height: 70vh;
     background-color: #1f2833;;
     border-radius: 5px;
     margin-top: 50px;
@@ -464,53 +496,54 @@ header .Cart{
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     transition: .5s;
 }
+.Filter #F-ele{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Filter #F-ele div{
+    text-align: left;
+}
 
 .Filter input[type='text'] , input[type='number']{
     width: 220px;
     padding-top: 10px;
     padding-bottom: 3px;
     border: none;
-    border-bottom: solid 1px  gray ;
+    border-bottom: solid 1.5px #FBE9D0;
     background: transparent;
     outline: none;
-    color: white;
+    color: #FBE9D0;
 }
 .Filter input[type='text']::placeholder , input[type='number']::placeholder{
     font-size: 15px;
 }
 .Filter input[type='text']:focus , input[type='number']:focus{
-    border-bottom: solid 1px  rgb(0, 255, 191) ;
+    border-bottom: solid 1.5px  #14afaa ;
     transition: 1s;
-}
-.Filter .Date div{
-    display: flex;
-    flex-direction: column;
 }
 
 .Filter .TitleLabel{
-    margin-left: -100px;
-    /* color: rgb(0, 255, 191); */
+    display: block;
+    margin-top: 5px;
     font-size: 18px;
 }
-.Filter .Date .TitleLabel {
-    margin-left: -87px;
+
+.Filter .Date{
+    margin-left: -20px;
 }
-.Filter .Date .DateLabel{
-    translate: -60px 20px;
-    /* color: rgb(0, 255, 191); */
-}
-.Filter .Date input[type='radio']{
-    accent-color:rgb(0, 255, 191);
-    border: rgb(0, 255, 191) 1px solid;
-    height: 20px;
-}
-.Filter h1{
-    /* color: rgb(0, 255, 191); */
+.Filter #SelectOpt{
+    background-color: #22354b;
+    color: #FBE9D0;
+    border: none;
+    outline: none;
+    width: 200px;
+    padding: 5px 20px;
 }
 #btn{
     padding: 7px 10px;
     color: black;
-    background-color: rgb(0, 255, 191);
+    background-color: #2B7A78;
     font-size: 15px;
     translate: 0px 25px;
     text-decoration: none;
@@ -519,7 +552,7 @@ header .Cart{
     cursor: pointer;
 }
 #btn:hover{
-    background-color: rgb(28, 192, 151);
+    background-color: #14afaa;
     transition: .3s;
 }
 
@@ -542,7 +575,7 @@ header .Cart{
 #Foot{
     width: 100%;
     height: 25vh;
-    background-color: black;
+    background-color: #1F2833;
     position: absolute;
     bottom: 0;
     z-index: 6;
@@ -632,3 +665,42 @@ header .Cart{
 
 
 /* pricing Style */
+
+
+
+/* Notif Pagination */
+
+.Notif_pagination {
+    text-align: center;
+    /* margin-top: 2rem; */
+    position: absolute;
+    z-index: 10000;
+    top: 100px;
+    /* translate: 460px; */
+    width: 100%;
+}
+
+.Notif_pagination a {
+    color: #FBE9D0;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #1f2833;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.Notif_pagination a:hover {
+    background-color: #1f2833;
+    color: #FBE9D0;
+}
+
+.Notif_pagination .active {
+    background-color: #1f2833;
+    color: #FBE9D0;
+}
+.Notif_pagination a{
+    cursor: pointer;
+}
+#page-numbers{
+    margin-top: 15px;
+}

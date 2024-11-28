@@ -163,6 +163,7 @@ let i = 0;
 
 
 
+//Pagination 
 const cardsPerPage = 6; // Number of cards to show per page
 const dataContainer = document.querySelector(".Food");
 const pagination = document.getElementById("pagination");
@@ -236,10 +237,10 @@ pageLinks.forEach((link) => {
 displayPage(currentPage);
 updatePagination();
 
-// function affiche(this){
-//   console.log(this)
-// }
 
+
+
+//Rating
 let stars = document.getElementsByClassName('star');
 
 function gfg(n) {
@@ -263,12 +264,22 @@ function remove() {
   }
 }
 
+
+
+
+//Add To Cart
+
 let CartOfProduct = document.getElementById('CartOfProduct')
 let table = document.createElement('table')
 let LastTr = document.createElement('tr');
-LastTr.innerHTML = 'Total is : '
+// LastTr.innerHTML = 'Total is : '
 LastTr.style.textAlign = 'center'
 table.style.width = '100%'
+
+let link = document.createElement('button')
+link.innerHTML = 'delete'
+link.id = 'linkBtn'
+LastTr.appendChild(link)
 
 function affiche(id){
   if(parseInt(CartOfProduct.innerHTML) === 9){
@@ -341,7 +352,20 @@ function affiche(id){
   }
   table.appendChild(LastTr)
   // console.log(Title)
+  document.getElementById('linkBtn').onclick = ()=>{
+    document.getElementById('AddedItems').removeChild(document.querySelector('table'))
+    CartOfProduct.innerHTML = 0
+    AddedItems.style.top = '-200px';
+    AddedItems.style.scale = '0'
+    AddedItems.style.transition = '.5s'
+  }
 }
+
+
+//Notification
+
+
+
 
 
 
@@ -372,6 +396,17 @@ cart.onclick = ()=>{
       AddedItems.style.transition = '.5s'
     }
   }
+}
+
+
+
+let Notif_ = document.getElementById('Notif_');
+let picText = document.querySelector('.picText');
+
+if(picText.children[1].innerText.toLowerCase() === 'NO New Pruducts'.toLowerCase()){
+  Notif_.style.display = 'none'
+  notificationBar.style.display = 'none'
+
 }
 
 
