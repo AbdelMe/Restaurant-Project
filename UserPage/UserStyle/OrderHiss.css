@@ -7,6 +7,7 @@
 }
 body{
     background-color: #2B7A78;
+    position: relative;
 }
 #Table , #Table1{
     width: 100%;
@@ -125,3 +126,22 @@ h4 #ThisPage:hover{
     background: linear-gradient(#642bff,#14afaa);
     border-radius: 1px;
 }
+
+
+
+/* @media print {
+
+    body *{
+        display: none;
+    }
+    body{
+        display: flex;
+        background-color: white;
+        justify-content: center;
+        align-items: center;
+    }
+    #printDiv{
+        display: block;
+        top: 200px;
+    }
+} */

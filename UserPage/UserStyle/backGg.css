@@ -48,7 +48,6 @@ header a{
     text-shadow: 0 5px 10px #0004;
 }
 .carousel .list .item .content .des{
-    width: 80%;
     font-size: 17px;
     font-weight: 400;
 }
@@ -119,7 +118,7 @@ header a{
 .thumbnail{
     position: absolute;
     bottom: 50px;
-    left: 50%;
+    left: 60%;
     width: max-content;
     z-index: 30;
     display: flex;

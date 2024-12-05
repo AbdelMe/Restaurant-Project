@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="UserStyle/OrderHistory.css">
+    <link rel="stylesheet" href="UserStyle/OrderHiss.css">
     <link rel="icon" href="./Picture/food.png">
 </head>
 
@@ -55,7 +55,7 @@
             </tr>
         </thead>
     </table>
-    <table width='100%' id='Table1'>
+    <table width='100%' id='Table1' class='Table1'>
         <tbody class='T-Body' id='T-Body'>
             <?php
                 if(count($Tab_products) === 0){
@@ -66,6 +66,7 @@
                 
                 ?>
                 <tr id='Tr2' class='Tr2' width='100%'>
+                    <td width='30%' hidden><?= $P['id_P']?></td>
                     <td width='30%'><?= $P['Title']?></td>
                     <td width='10%'><img src="<?php echo '../AdminPage/' . $P['pic'] ?>"  id='ProdPic'></td>
                     <td width='10%'><?= $P['Price']?>$</td>
@@ -73,16 +74,23 @@
                     <td width='10%'><?= $P['Price_Total']?>$</td>
                     <td width='10%'><?= $P['Order_Date']?></td>
                     <td width='10%'><?= $P['Order_Time']?></td>
-                    <td width='10%'>
+                    <td width='10%' class="Details">
                         <a href='DeleteOrder.php?id_O=<?= $P['id_O'] ?>'><button>Delete</button></a>
-                        <button>Download</button>
+                        <button><a onclick="affiche(<?php echo $P['id_P'] ?>)">Details</a></button>
                     </td>
                 </tr>
                 <?php } }?>
         </tbody>
     </table>
 
-    <script src='./Userjs/OrderHist.js'></script>
+    <div style='background-color:black;width:600px;display:none' id='details'>
+        <h1 id='Ptitle'>Title:</h1>
+        <h1>Picture:</h1>
+        <h1>Price:</h1>
+        <h1>Quantity:</h1>
+    </div>
+
+    <script src='./Userjs/OrderHistoryyy.js'></script>
 
 
 </body>

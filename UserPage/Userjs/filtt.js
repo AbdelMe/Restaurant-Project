@@ -1,5 +1,3 @@
-
-
 let children = document.querySelectorAll("#container");
 let BigerThan = document.getElementById("BigerThan");
 let LessThan = document.getElementById("LessThan");
@@ -14,7 +12,7 @@ LessThan.oninput = () => {
     let z = parseInt(n);
 
 
-    if (filterByPrice[0].value >= z) {
+    if (filterByPrice[0].value >= z || filterByPrice[0].value === '') {
       ele.style.display = "flex";
     } else {
       ele.style.display = "none";
@@ -33,7 +31,7 @@ BigerThan.oninput = () => {
     let z = parseInt(n);
 
 
-    if (filterByPrice[1].value <= z) {
+    if (filterByPrice[1].value <= z || filterByPrice[1].value === '') {
       ele.style.display = "flex";
     } else {
       ele.style.display = "none";
@@ -60,13 +58,16 @@ inpt.addEventListener("input", () => {
 
 //Filter by date
 // let opt1 = document.getElementById('opt1');
+// opt1.value = new Date();
 // let opt2 = document.getElementById('opt2');
 // let opt3 = document.getElementById('opt3');
 // let opt4 = document.getElementById('opt4');
 // let SelectOpt = document.getElementById('SelectOpt');
 
+// SelectOpt.onchange = ()=>{
+//   console.log(SelectOpt.value)
+// }
 
-// opt1.value = new Date();
 // let b  = new Date(opt1.getFullYear(), opt1.getMonth(), opt1.getDate())
 // console.log(b)
 

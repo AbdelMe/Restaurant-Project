@@ -77,6 +77,62 @@ header .Cart{
     display: block;
     width: 100px;
 }
+
+
+#down-chevron{
+    cursor: pointer;
+    width: 20px;
+    transform: translateX(380px);
+    position: relative;
+    z-index: 1000;
+}
+.Logo_Search h1{
+    cursor: pointer;
+    appearance: none;
+    background-color: #092a509c;
+    /* background: transparent; */
+    color: #FBE9D0;
+    border: none;
+    outline: none;
+    width: 350px;
+    padding: 5px 20px;
+    font-size: 15px;
+    transform: translateX(-100px);
+}
+/* .Logo_Search select option{
+    background-color: #22354b;
+} */
+
+#Options{
+    position: absolute;
+    top: 50px;
+    left: 275px;
+    /* background-color: #14afaa93; */
+    background-color: #1f28339c;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 350px;
+    padding: 20px;
+    font-size: 17px;
+    /* scale: 1; */
+    transform: rotateX(90deg);
+}
+#Options a{
+    width: 100%;
+    text-align: left;
+    padding: 5px 6px;
+}
+#Options a:hover{
+    background-color: #1f2833;
+    width: 100%;
+    transition: .5s;
+}
+
+
+
+
+
 .Menu .divProfil{
     display: flex;
     flex-basis: 30%;
@@ -148,20 +204,30 @@ header .Cart{
     padding: 10px;
     background-color: #1f2833b0;
     position: absolute;
-    top: -200px;
-    scale: 0;
+    top: 67px;
+    transform: rotateX(90deg);
     right: 10px;
     z-index: 39;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For IE and Edge */
 }
-/* #AddedItems div{
-    background-color: #24305E;
-    margin-top: 5px;
-    padding: 10px;
-} */
+#AddedItems table{
+    width: 100%;
+    border-collapse: collapse;
+}
+#AddedItems #linkBtn{
+    background-color: #2B7A78;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
 
 
 #AddedItems table tr{
-    background-color: #24305E;
+    background-color: #1F2833;
 }
 
 
@@ -172,7 +238,7 @@ header .Cart{
     text-align: center;
     border: none;
     outline: none;
-    padding: 10px;
+    padding: 4px 6px;
     border-radius: 5px;
 }
 #AddedItems table tr td a:hover{
@@ -211,7 +277,7 @@ header .Cart{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    z-index: 2;
+    z-index: 1000;
     position: sticky;
     top: 0; 
 }
@@ -250,14 +316,13 @@ header .Cart{
 
 /* Notification style */
 .notif{
-    background-color: #2d303575;
-    width: 300px;
+    /* background-color: #2d303575; */
+    background-color: #1f2833b0;
+    width: 350px;
     height: 35vh;
-    /* border-radius: 10px; */
     display: flex;
     flex-direction: column;
-    /* position: relative; */
-    z-index: 3;
+    z-index: 1001;
 }
 .notif hr{
     display: block;
@@ -280,13 +345,18 @@ header .Cart{
     border-radius: 10px;
 }
 .notif #More_{
-    background-color: #22354b;
-    padding: 3px;
+    background-color: #14afaa7e;
+    padding: 3px 8px;
     border-radius: 5px;
     border: none;
     outline: none;
     cursor: pointer;
     align-self: center;
+}
+.notif #Notif_Title{
+    font-size: 17px;
+    text-align: center;
+    flex-basis: 60%;
 }
 
 
@@ -404,13 +474,17 @@ header .Cart{
 }
 .IceCream{
     width: 80%;
+    height: 120vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
-
 .IceCream {
     display: flex;
     flex-wrap: wrap;
     /* justify-content: space-around; */
 }
+
 
 .IceCream #container{
     background-color: #1f2833bb;

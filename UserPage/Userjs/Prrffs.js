@@ -4,10 +4,11 @@ let notificationIcon = document.getElementById("notification");
 let notificationBar = document.querySelector(".notif");
 let information = document.querySelector(".information");
 
+
 // Animation part
 Page.addEventListener("mouseenter", () => {
   nav.style.scale = "1";
-  nav.style.translate = "98%";
+  nav.style.translate = "47%";
   nav.style.transition = ".5s";
 
   notificationBar.style.scale = "0";
@@ -30,7 +31,7 @@ notificationIcon.addEventListener("mouseenter", () => {
   document.body.style.overflowX = "hidden";
 
   notificationBar.style.scale = "1";
-  notificationBar.style.translate = "346%";
+  notificationBar.style.translate = "138%";
   notificationBar.style.transition = ".5s";
   document.body.style.overflowX = "hidden";
 });
@@ -52,115 +53,46 @@ addEventListener("load", () => {
 let NumberDivs = 9;
 let i = 0;
 
-// for(let i=0 ; i<NumberDivs ; i++){
-//         let PicSrc = ['./img/food/tagin/Tajine.jpeg','./img/food/pizza/wallpaperflare.com_wallpaper (4).jpg','./img/food/burger/wallpaperflare.com_wallpaper.jpg',
-//         './img/iceCream/wallpaperflare.com_wallpaper (15).jpg', './img/iceCream/Almond Magnum Ice Cream (Vegan) - Nutriholist.jpeg',
-//         './img/iceCream/Cookies and Cream Ice Cream Shake.jpeg', './img/juice/6d9b4c78-53ff-4802-84d2-70599199c6a4.jpeg' ,
-//         './img/juice/5e1befc3-6810-454a-9019-0afcd90ccf5c.jpeg' , './img/juice/Blackberry Green Smoothie.jpeg'
-//     ]
+let ThisDay = document.getElementById('opt1');
+let ThisMonth = document.getElementById('opt3');
+let ThisYear = document.getElementById('opt4');
+// opt1.value = new Date();
+// // opt1.value = new Date().getFullYear();     //2024
+// // opt1.value = new Date().getDate();         //Day
+ThisDay.value = new Date().getDate();  //.getDate()
+ThisMonth.value = new Date().getMonth() + 1;
+ThisYear.value = new Date().getFullYear();
 
-//     let body = document.body
-//     let div = document.createElement('div')
-//     div.id = 'container'
-//     let pic = document.createElement('img')
-
-//     pic.src = PicSrc[i]
-
-//     let title = document.createElement('p')
-
-//     title.innerHTML = 'Tagin Bniiiin'
-
-//     let Price = document.createElement('div')
-//     Price.id = 'Price'
-//     let Order = document.createElement('button')
-//     Order.innerText = 'Order Now'
-
-//     div.appendChild(pic)
-//     div.appendChild(title)
-//     div.appendChild(Price)
-//     div.appendChild(Order)
-
-//     container.appendChild(div)
-//     Product.appendChild(container)
-
-//     body.appendChild(Product)
-// }
-
-// while(i < NumberDivs){
-//     let PicSrc = ['./img/food/tagin/Tajine.jpeg','./img/food/pizza/wallpaperflare.com_wallpaper (4).jpg','./img/food/burger/wallpaperflare.com_wallpaper.jpg',
-//         './img/iceCream/wallpaperflare.com_wallpaper (15).jpg', './img/iceCream/Almond Magnum Ice Cream (Vegan) - Nutriholist.jpeg',
-//         './img/iceCream/Cookies and Cream Ice Cream Shake.jpeg', './img/juice/6d9b4c78-53ff-4802-84d2-70599199c6a4.jpeg' ,
-//         './img/juice/5e1befc3-6810-454a-9019-0afcd90ccf5c.jpeg' , './img/juice/Blackberry Green Smoothie.jpeg'
-//     ]
-//     let body = document.body
-//     let div = document.createElement('div')
-//     div.id = 'container'
-//     let pic = document.createElement('img')
-//     pic.src = PicSrc[i]
-
-//     let title = document.createElement('p')
-
-//     title.innerHTML = 'Tagin Bniiiin'
-
-//     let Price = document.createElement('div')
-//     Price.id = 'Price'
-//     let Order = document.createElement('button')
-//     Order.innerText = 'Order Now'
-
-//     div.appendChild(pic)
-//     div.appendChild(title)
-//     div.appendChild(Price)
-//     div.appendChild(Order)
-
-//     container.appendChild(div)
-//     Product.appendChild(container)
-
-//     body.appendChild(Product)
-
-//     i++
-// }
-
-// let Pictures = document.querySelector('.IceCream').children
-// let y = 0
-// let listImage = []
-// for(ele of Pictures){
-//     let b = ele.id
-//     let x = document.getElementById(b).firstElementChild
-//     listImage.push(x)
-// }
-// for(ele in PicSrc){
-
-// }
-
-// let container = document.querySelector(".IceCream");
-// let Product = document.querySelector(".Prod");
-// let children = document.querySelectorAll("#container");
-// for (let i = 0; i < children.length; i++) {
-//   let AddToCart = document.createElement("img");
-//   let link = document.createElement("a");
-//   let body = document.body;
-//   AddToCart.id = "addtocart";
-//   AddToCart.name = "ATcart";
-//   AddToCart.src = "Picture/add-to-cart.png";
-
-//   link.name = "CartLink";
-//   link.href = "#";
-//   link.id = "Clink";
-
-//   link.style.cssText = "width:40px; position:absolute; right:20px; top:20px";
-//   AddToCart.style.cssText = "width:40px;";
-
-//   link.appendChild(AddToCart);
-
-//   children[i].appendChild(link);
-
-//   container.appendChild(children[i]);
-//   Product.appendChild(container);
-
-//   body.appendChild(Product);
-// }
-
-
+// console.log(ThisDay.value)    3
+let SelectOpt = document.getElementById('SelectOpt');
+SelectOpt.onchange = ()=>{
+  // console.log(SelectOpt.value)  //Month 12
+  let children = document.querySelectorAll("#container");
+  for(ele of children ){
+    // for(i of ele.children){
+    //   console.log(i)
+    // }
+    // console.log(ele.lastElementChild)//Date
+    let ElementDay = new Date(ele.lastElementChild.innerHTML).getDate()  //.getDate()
+    console.log(ElementDay)
+    let ElementMonth = new Date(ele.lastElementChild.innerHTML).getMonth() + 1
+    let ElementYear = new Date(ele.lastElementChild.innerHTML).getFullYear()
+    // console.log(d)
+    // let newDate = d.getFullYear() + d.getDate() + (d.getMonth() + 1)
+    // console.log(parseInt(SelectOpt.value) === parseInt(d))
+    if(parseInt(SelectOpt.value) === parseInt(ElementDay)){
+      ele.style.display = 'flex';
+    }
+    // else if(parseInt(SelectOpt.value) > parseInt(ElementWeek) && )
+    else if(parseInt(SelectOpt.value) === parseInt(ElementMonth)){
+      ele.style.display = 'flex';
+    }
+    else if(parseInt(SelectOpt.value) === parseInt(ElementYear)){
+      ele.style.display = 'flex';
+    }
+    else ele.style.display = 'none';
+  }
+}
 
 
 //Pagination 
@@ -265,21 +197,21 @@ function remove() {
 }
 
 
-
-
 //Add To Cart
 
 let CartOfProduct = document.getElementById('CartOfProduct')
 let table = document.createElement('table')
-let LastTr = document.createElement('tr');
+// let LastTr = document.createElement('tr');
 // LastTr.innerHTML = 'Total is : '
-LastTr.style.textAlign = 'center'
-table.style.width = '100%'
+// LastTr.style.textAlign = 'center'
+// table.style.width = '100%'
+
 
 let link = document.createElement('button')
-link.innerHTML = 'delete'
+link.innerHTML = 'delete All'
 link.id = 'linkBtn'
-LastTr.appendChild(link)
+document.getElementById('AddedItems').appendChild(link);
+
 
 function affiche(id){
   if(parseInt(CartOfProduct.innerHTML) === 9){
@@ -290,23 +222,11 @@ function affiche(id){
   }
 
   let children = document.querySelectorAll("#container");
+
   for(ele of children){
     if(id == ele.children[0].value){
-      // let ListProducts = [{idP : ele.children[0].value , Tit : ele.children[2].innerHTML, Pr : parseInt(ele.children[3].children[0].innerHTML)}];
-   
-      // localStorage.setItem('data', JSON.stringify(ListProducts));
-      // let ListProductsFinal = JSON.parse(localStorage.getItem('data'));
-      // for(ele of ListProductsFinal){
-        
-      // }
 
-      // console.log(ele.children[1])//Pic
-      // console.log(ele.children[2].innerHTML)//Title
-      // console.log(ele.children[3].innerHTML)//Price
-      // let div = document.createElement('div');
       let Pic = document.createElement('img'); 
-      // let Title = document.createElement('p'); 
-      // let Price = document.createElement('p'); 
       let Link = document.createElement('a');
 
       Link.innerHTML = 'Order Now'
@@ -337,27 +257,19 @@ function affiche(id){
       table.appendChild(tr)
 
 
-      // Title.innerHTML = ele.children[2].innerHTML;
-      // Price.innerHTML = ele.children[3].innerHTML
-      // div.appendChild(Pic)
-      // div.appendChild(Title)
-      // div.appendChild(Price)
-      // div.appendChild(Link)
-
-
       document.getElementById('AddedItems').appendChild(table);
-      // document.getElementById('AddedItems').appendChild(div);
     }
 
   }
-  table.appendChild(LastTr)
-  // console.log(Title)
+ 
+
+
   document.getElementById('linkBtn').onclick = ()=>{
     document.getElementById('AddedItems').removeChild(document.querySelector('table'))
     CartOfProduct.innerHTML = 0
-    AddedItems.style.top = '-200px';
-    AddedItems.style.scale = '0'
+    AddedItems.style.transform = 'rotateX(90deg)'
     AddedItems.style.transition = '.5s'
+    
   }
 }
 
@@ -383,19 +295,18 @@ function affiche(id){
 let cart = document.querySelector('.Cart');
 let AddedItems = document.getElementById('AddedItems');
 cart.onclick = ()=>{
-  if(AddedItems.children.length === 0){
+  if(AddedItems.children.length === 1){
     return
   }
   else{
-    AddedItems.style.top = '67px';
-    AddedItems.style.scale = '1'
+    AddedItems.style.transform = 'rotateX(0deg)';
     AddedItems.style.transition = '.5s'
     AddedItems.onmouseleave = ()=>{
-      AddedItems.style.top = '-200px';
-      AddedItems.style.scale = '0'
+      AddedItems.style.transform = 'rotateX(90deg)';
       AddedItems.style.transition = '.5s'
     }
   }
+
 }
 
 
@@ -407,6 +318,19 @@ if(picText.children[1].innerText.toLowerCase() === 'NO New Pruducts'.toLowerCase
   Notif_.style.display = 'none'
   notificationBar.style.display = 'none'
 
+}
+
+
+
+//More Options
+let More_Options = document.getElementById('More_Options');
+let Options = document.getElementById('Options');
+More_Options.onclick = ()=>{
+  Options.style.transform = 'rotateX(0deg)';
+  Options.style.transition = '.3s';
+}
+Options.onmouseleave = ()=>{
+  Options.style.transform = 'rotateX(90deg)';
 }
 
 

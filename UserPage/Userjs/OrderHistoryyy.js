@@ -71,3 +71,70 @@ pageLinks.forEach((link) => {
 
 displayPage(currentPage);
 updatePagination();
+
+
+
+let Details = document.getElementsByClassName('Table1');
+for(ele of Details){
+  for(i of ele.children){
+    for(b of i.children){
+      console.log(b.children)//td of every tr in table 
+    }
+  }
+}
+// let Details = document.getElementsByClassName('Details');
+// for(ele of Details){
+//   ele.onclick = function affiche(id){
+//     console.log(id)
+//   }
+// }
+
+// function (id){
+//   console.log(id)//id Of each Product
+// }
+
+
+
+//working
+function affiche(id){
+  // let ProductDetails = document.createElement('div')
+  // ProductDetails.id = 'printDiv'
+  // let Printbtn = document.createElement('button')
+  // Printbtn.innerHTML = 'Print'
+
+  // let Closebtn = document.createElement('button')
+  // Closebtn.innerHTML = 'close'
+
+  // ProductDetails.innerHTML = 'The id Of the element is :'+id
+  // ProductDetails.style.backgroundColor = 'crimson'
+  // ProductDetails.style.width = "500px"
+  // ProductDetails.style.height = "70vh"
+  // ProductDetails.style.position = 'absolute'
+  // ProductDetails.style.top = '30%'
+  // ProductDetails.style.left = '420px'
+  // ProductDetails.style.zIndex = '10'
+
+  // ProductDetails.appendChild(Closebtn)
+  // ProductDetails.appendChild(btn)
+  // document.body.appendChild(ProductDetails)
+
+  // Printbtnbtn.onclick = ()=>{
+  //   print();
+  // }
+  // Closebtn.onclick = ()=> {
+  //   document.body.removeChild(ProductDetails)
+  // }
+let div = document.getElementById('details')
+let Ptitle = document.getElementById('Ptitle')
+let Table = document.getElementsByClassName('Table1');
+for(ele of Table){
+  for(i of ele.children){
+    for(b of i.children){
+      console.log(b.children)//td of every tr in table 
+      Ptitle.innerHTML+= ' ' + b.children[1].innerHTML
+    }
+  }
+}
+div.style.display = 'block'
+}
+

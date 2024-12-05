@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="UserStyle/ordeer.css">
+    <link rel="stylesheet" href="UserStyle/ordeee.css">
     <link rel="icon" href="./Picture/food.png">
 </head>
 
@@ -31,15 +31,20 @@
                 include 'connect.php';
 
                 @$p = $_GET['id_P'];
-                $sql = $dbt->prepare('SELECT * from product where id_P=?');
+                $sql = $dbt->prepare('SELECT * from product where  id_P=?');
                 $sql->execute([$p]);
                 $products = $sql->fetch();
                 // echo '<pre>';
                 // print_r($products);
                 // echo '</pre>';
 
+                $sql1 = $dbt->prepare('SELECT discount_Num from discount where  id_P=?');
+                $sql1->execute([$_GET['id_P']]);
+                $discount = $sql1->fetch();
 
-
+                // echo '<pre>';
+                // print_r($discount);
+                // echo '</pre>';
             ?>
 
         <div class="pic">
@@ -50,7 +55,8 @@
                 <p><?php  echo $products['Title'] ?></p>
                 <p>Price: <span id='Cr_Price'><?php echo $products['Price'] ?></span>$</p>
                 <p><?php echo $products['Price'] + 5 ?>$</p>
-                <a href="#" ><button id='viewM'>View More...</button></a>
+                <!-- <a href="#" ><button id='viewM'>View More...</button></a> -->
+                 <p id='discount_Num'>Discount: <span><?php if($sql1->rowCount() === 0) echo '0'; else echo $discount['discount_Num'] ?></span>%</p>
             </div>
             <!-- <div class="more">
                 </div> -->
@@ -152,7 +158,7 @@
         ?>
     <!-- <p name='C_Message' id='C_Message'></p> -->
 
-    <script src='./Userjs/validat.js'></script>
+    <script src='./Userjs/vall.js'></script>
 
 </body>
 

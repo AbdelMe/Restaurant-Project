@@ -87,6 +87,37 @@ function remove() {
 
 
 
+
+
+
+// let viewMore = document.getElementById('viewM');
+// viewMore.addEventListener('click',()=>{
+//   // document.querySelector('.Total').classList.remove('Total')
+//   let v = document.querySelector('.Total')
+//   let b = document.querySelector('.Descrip');
+//   // document.querySelector('.product').removeChild(v);
+//   // // document.querySelector('.product').appendChild(document.querySelector('.Descrip'))
+//   // document.querySelector('.Total').style.display = 'block'
+//   // document.querySelector('.Total').style.scale = '1'
+//   // document.querySelector('.Total').style.transition = '1s'
+//   v.style.display = 'none';
+//   b.style.display = 'block'
+//   b.style.transform = 'rotateX(0deg)'
+//   b.style.transition = '.5s'
+//   // console.log('done')
+
+
+// })
+
+
+let discount_Num = document.querySelector('#discount_Num span');
+console.log(parseInt(discount_Num.innerHTML))
+if(parseInt(discount_Num.innerHTML)===0){
+  document.getElementById('discount_Num').style.display = 'none'
+}
+
+
+
 let ppp = document.getElementById("C_Message");
 if (ppp.style.display == "block") {
   // console.log("ist work");
@@ -110,18 +141,3 @@ ccc.onclick = () => {
   ccc.style.scale = "0";
   ccc.style.transition = ".4s";
 };
-
-
-// let viewMore = document.querySelector('#viewM');
-// viewMore.addEventListener('click',()=>{
-//   // document.querySelector('.Total').classList.remove('Total')
-//   let v = document.querySelector('.Total')
-//   document.querySelector('.product').removeChild(v);
-//   document.querySelector('.Total').style.display = 'block'
-//   document.querySelector('.Total').style.scale = '1'
-//   document.querySelector('.Total').style.transition = '1s'
-
-
-// })
-
-

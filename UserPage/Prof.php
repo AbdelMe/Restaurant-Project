@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="UserStyle/Slide.css">
-    <link rel="stylesheet" href="UserStyle/backG.css">
-    <link rel="stylesheet" href="UserStyle/Poofffell.css">
+    <link rel="stylesheet" href="UserStyle/backGg.css">
+    <link rel="stylesheet" href="UserStyle/Poooffffiii.css">
     <link rel="icon" href="./Picture/food.png">
 
 </head>
@@ -26,12 +26,25 @@
         $Notifs = $sql->fetch();
 
     ?>
+
     <div class="header">
         <div id='CartOfProduct'>0</div>
         <header>
             <div class="Logo_Search">
                 <a href="prof.php"><img src="Picture/logolavilla-new_copy-2.png" alt=""></a>
-                <input type="search" placeholder="Pizza,Burger,Tagin...">
+                <!-- <input type="search" placeholder="Pizza,Burger,Tagin..."> -->
+                 <img src="Picture/caret-down.png" id='down-chevron'>
+                 <!-- <select>
+                    <option>Products</option>
+                    <option >Orders</option>
+                    <option >Nothings</option>
+                 </select> -->
+                 <h1 id='More_Options'>See More Options</h1>
+            </div>
+            <div id='Options'>
+                <a href="">Home</a>
+                <a href="#AllProduct">Products</a>
+                <a href="OrderHistory.php?user_id=<?=  $_SESSION['user_Id'] ?>">Your Orders</a>
             </div>
             <div class="Menu">
                 <div class='divProfil'>
@@ -46,59 +59,50 @@
                     <img src="Picture/shopping-cart.png" alt="" class='Cart'>
                 </div>
             </div>
-        </header>
-    </div>
-    <div id='AddedItems'></div>
-    <div id="sideBar">
-        <div class="picSideBar">
-            <img src="Picture/logolavilla-new_copy-2.png" alt="">
-        </div>
-        <div class="services">
-            <h1>services</h1>
-            <a href="Prof.php">Home</a>
-            <a href="about.php">About</a>
-            <a href="contactUs.php">Contact Us</a>
-        </div>
-        <div class="links">
-            <h1>Profil</h1>
-            <a href="info.php?user_id=<?=  $_SESSION['user_Id'] ?>">Your Information</a>
-            <a href="OrderHistory.php?user_id=<?=  $_SESSION['user_Id'] ?>">Orders History</a>
-            <!-- <a href="">Suggested Food</a> -->
-            <!-- <a href="">Log Out</a> -->
-        </div>
-    </div>
-    <!-- Notification Html -->
-    <div class="notif">
-        <div class="picText">
-            <img src="<?php if($sql->rowCount() === 0) echo './Picture/error404.png'; else echo '../AdminPage/' . $Notifs['picture']; ?>" id="TaginPic">
-            <span id="Notif_Title">
-                <?php if($sql->rowCount() === 0) echo 'NO New Pruducts'; else echo $Notifs['Title'] ?>
-            </span>
-        </div>
-        <a href="#AllProduct" id="More_">Check More</a>
 
-        <!-- <img src="Picture/New.png" alt="" width='50px'> -->
 
-        <!-- <div class="Notif_pagination" id="pagination">
-            <a id="prevPage">Previous</a>
-            <a class="page-link" data-page="1">1</a>
-            <a class="page-link" data-page="2">2</a>
-            <a class="page-link" data-page="3">...</a>
-            <a id="nextPage">Next</a>
-            <p id="page-numbers"></p>
-        </div> -->
-
-        <hr>
-        <div class="rat">
-            <p>What's Your Rating Of This Product ?</p>
-            <div class="stars">
-                <span onclick="gfg(1)"  class='star'>★</span>
-                <span onclick="gfg(2)"  class='star'>★</span>
-                <span onclick="gfg(3)"  class='star'>★</span>
-                <span onclick="gfg(4)"  class='star'>★</span>
-                <span onclick="gfg(5)"  class='star'>★</span>
+            <div id='AddedItems'></div>
+            <div id="sideBar">
+                <div class="picSideBar">
+                    <img src="Picture/logolavilla-new_copy-2.png" alt="">
+                </div>
+                <div class="services">
+                    <h1>services</h1>
+                    <a href="Prof.php">Home</a>
+                    <a href="about.php">About</a>
+                    <a href="contactUs.php">Contact Us</a>
+                </div>
+                <div class="links">
+                    <h1>Profil</h1>
+                    <a href="info.php?user_id=<?=  $_SESSION['user_Id'] ?>">Your Information</a>
+                    <a href="OrderHistory.php?user_id=<?=  $_SESSION['user_Id'] ?>">Orders History</a>
+                    <!-- <a href="">Suggested Food</a> -->
+                    <!-- <a href="">Log Out</a> -->
+                </div>
             </div>
-        </div>
+
+            <!-- Notification Html -->
+            <div class="notif">
+                <div class="picText">
+                    <img src="<?php if($sql->rowCount() === 0) echo './Picture/error404.png'; else echo '../AdminPage/' . $Notifs['picture']; ?>" id="TaginPic">
+                    <h1 id="Notif_Title">
+                        <?php if($sql->rowCount() === 0) echo 'NO New Pruducts'; else echo $Notifs['Title'] ?>
+                    </h1>
+                </div>
+                <a href="#AllProduct" id="More_">Check More</a>
+                <hr>
+                <div class="rat">
+                    <p>What's Your Rating Of This Product ?</p>
+                    <div class="stars">
+                        <span onclick="gfg(1)"  class='star'>★</span>
+                        <span onclick="gfg(2)"  class='star'>★</span>
+                        <span onclick="gfg(3)"  class='star'>★</span>
+                        <span onclick="gfg(4)"  class='star'>★</span>
+                        <span onclick="gfg(5)"  class='star'>★</span>
+                    </div>
+                </div>
+            </div>
+        </header>
     </div>
 
 
@@ -108,15 +112,14 @@
     <div class="carousel">
         <!-- list item -->
         <div class="list">
-            <div class="item">
+            <!-- <div class="item">
                 <img
                     src="Picture/backG_Pic/exploding-burger-with-vegetables-melted-cheese-black-background-generative-ai.jpg">
                 <div class="content">
-                    <!-- <div class="author">SPICY FOOD</div> -->
+                    <div class="author">SPICY FOOD</div>
                     <div class="title">SPICY FOOD</div>
                     <div class="topic">JUICE</div>
                     <div class="des">
-                        <!-- lorem 50 -->
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima
                         placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et
                         quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at
@@ -126,7 +129,7 @@
                         <button><a href="about.php">SEE MORE</a></button>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="item">
                 <img src="Picture/backG_Pic/view-delicious-shawarma-dish.jpg">
                 <div class="content">
@@ -181,18 +184,18 @@
         </div>
         <!-- list thumnail -->
         <div class="thumbnail">
-            <div class="item">
+            <!-- <div class="item">
                 <img
                     src="Picture/backG_Pic/exploding-burger-with-vegetables-melted-cheese-black-background-generative-ai.jpg">
                 <div class="content">
                     <div class="title">
                         SPICY BURGER
                     </div>
-                    <!-- <div class="description">
+                    <div class="description">
                         Description
-                    </div> -->
+                    </div>
                 </div>
-            </div>
+            </div> -->
             <div class="item">
                 <img src="Picture/backG_Pic/view-delicious-shawarma-dish.jpg">
                 <div class="content">
@@ -493,16 +496,16 @@
                         <select name="" id="SelectOpt" >
                             <option>--- All Time ---</option>
                             <option value="" id='opt1'>This Day</option>
-                            <option value="" id='opt2'>This Week</option>
+                            <!-- <option value="" id='opt2'>This Week</option> -->
                             <option value="" id='opt3'>This Month</option>
                             <option value="" id='opt4'>This Year</option>
                         </select>
                     </div>
                 </div>
                 
-                <div class="search">
+                <!-- <div class="search">
                     <button id="btn">Search</button>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="Food IceCream Juice">
@@ -524,7 +527,6 @@
                     ?>
             <div id="container" class='contai'>
                 <input type="number" hidden value="<?php echo $P['id_P'] ?>" id='InptId_P'>
-                <span hidden><?php echo $P['Posted_Date'] ?></span>
                 <img src="<?php echo '../AdminPage/' . $P['pic'] ?>" id="ProductPic">
                 <p><?php echo $P['Title'] ?></p>
                 <div id="Price">
@@ -534,7 +536,7 @@
                 <!-- <button name='CartLink' > -->
                     <img src="./Picture/add-to-cart.png" id='addtocart'  onclick="affiche(<?php echo $P['id_P'] ?>)">
                 <!-- </button> -->
-
+                <span hidden><?php echo  $P['Posted_Date'] ?></span>
             </div>
             <?php } ?>
         </div>
@@ -569,7 +571,7 @@
     </footer>
 
 
-    <script src="./Userjs/Profaa.js"></script>
+    <script src="./Userjs/Prrffs.js"></script>
     <script src="./Userjs/filtt.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 

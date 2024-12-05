@@ -305,8 +305,14 @@ h4 #ThisPag:hover{
 }
 
 .Descrip{
-    scale: 0;
+    transform: rotateX(90deg);
     display: none;
+    background-color: #2b7a778c;
+    width: 250px;
+    height: 9rem;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: auto;
     transition: 1s;
 }
 
