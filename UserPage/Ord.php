@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="UserStyle/ordeee.css">
+    <link rel="stylesheet" href="UserStyle/order.css">
     <link rel="icon" href="./Picture/food.png">
 </head>
 
@@ -16,36 +16,27 @@
     <?php
         session_start();
     ?>
+
+    <!-- Back Link -->
     <div class="Back">
         <a href="Prof.php" id="BackLink">Back</a>
         <h4><a href="Prof.php" id="homeLink">Home</a> / <a href="#" id="ThisPage">Order </a></h4>
     </div>
-    <!-- <div class="jjj">
-        <h4><a href="Prof.php" id="homeL">Home</a> / <a href="#" id="ThisPag">Your Information</a></h4>
-        <a href="Prof.php" id="BackL">Back</a>      
-    </div> -->
+
+    <!-- Product Details  -->
     <div class="product" id='P_R'>
         <?php  
-
-
                 include 'connect.php';
 
                 @$p = $_GET['id_P'];
                 $sql = $dbt->prepare('SELECT * from product where  id_P=?');
                 $sql->execute([$p]);
                 $products = $sql->fetch();
-                // echo '<pre>';
-                // print_r($products);
-                // echo '</pre>';
 
                 $sql1 = $dbt->prepare('SELECT discount_Num from discount where  id_P=?');
                 $sql1->execute([$_GET['id_P']]);
                 $discount = $sql1->fetch();
-
-                // echo '<pre>';
-                // print_r($discount);
-                // echo '</pre>';
-            ?>
+        ?>
 
         <div class="pic">
             <img src="<?php echo  '../AdminPage/' . $products['pic']  ?>">
@@ -55,11 +46,10 @@
                 <p><?php  echo $products['Title'] ?></p>
                 <p>Price: <span id='Cr_Price'><?php echo $products['Price'] ?></span>$</p>
                 <p><?php echo $products['Price'] + 5 ?>$</p>
-                <!-- <a href="#" ><button id='viewM'>View More...</button></a> -->
-                 <p id='discount_Num'>Discount: <span><?php if($sql1->rowCount() === 0) echo '0'; else echo $discount['discount_Num'] ?></span>%</p>
+                <p id='discount_Num'>Discount: <span><?php if($sql1->rowCount() === 0) echo '0'; else echo $discount['discount_Num'] ?></span>%</p>
             </div>
-            <!-- <div class="more">
-                </div> -->
+
+            <!-- Add Or Remove From Quantity -->
             <div class="Add_Remove">
                 <div class="icons">
                     <img src="Picture/Add_Remove/add.png" alt="" id='Add'>
@@ -73,6 +63,7 @@
 
         </div>
 
+        <!-- Total Items & Price  -->
         <div class="Total">
             <div>
                 <h2>Total Items: (<span id='Totalitems'>1</span> items)</h2>
@@ -83,12 +74,8 @@
                 <a href="OrderHistory.php?user_id=<?=  $_SESSION['user_Id'] ?>"><button>See Orders History</button></a>
             </div>
         </div>
-        <div class="Descrip Total">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit
-            . Dignissimos eveniet cumque maxime laudantium atque deserunt
-             sint odit iste natus ducimus fugit ea iure tenetur minima.
-        </div>
 
+        <!-- Rating -->
         <div class="rat">
             <p>Rate This Food:</p>
             <div class="stars">
@@ -102,6 +89,7 @@
         </div>
     </div>
 
+    <!-- Form For Ordring -->
     <div class="order">
         <div class="editProfil">
             <form action="" method="post">
@@ -109,10 +97,6 @@
                 <input type="text" placeholder="Last Name" name='Lname'>
                 <input type="number" placeholder="Tele" name='tele'>
                 <input type="text" placeholder="Adress" name='adress'>
-                <!-- <div>
-                    Fast Delevery <input type="radio" name="rad" value="2" checked>
-                    Normal Delevery <input type="radio" name="rad" value="0">
-                </div> -->
                 <p>Total Price: $<input type="text" name="priceTot" id='TextInpt' readonly><span id='T_Price'></span>
                 </p>
                 <input type="hidden" name="id" value="<?= $products['id_P'] ?>">
@@ -129,15 +113,12 @@
             @$Lname = $_POST['Lname'];
             @$tele = $_POST['tele'];
             @$adress = $_POST['adress'];
-            // @$rad = $_POST['rad'];
             @$priceTot = $_POST['priceTot']; 
 
             @$id = $_POST['id'];
             @$user_id = $_SESSION['user_Id'] ;
             @$confirm = $_POST['submit'];
             @$Qte = $_POST['Qte'] ;
-
-
 
             @$C_Message = '';
 
@@ -150,16 +131,10 @@
                                     values(?,?,?,?,?,?,?,?)');
                     $sqll->execute([$Fname , $Lname , $tele , $adress , $priceTot, $Qte, $user_id, $id]);
                     echo "<p name='C_Message' id='C_Message' style='display:block'>Ordred Succesfuly</p>";
-                    // header('location: Prof.php');
                 }
             }
-
-        
         ?>
-    <!-- <p name='C_Message' id='C_Message'></p> -->
-
-    <script src='./Userjs/vall.js'></script>
-
+    <script src='./Userjs/vallyy.js'></script>
 </body>
 
 </html>

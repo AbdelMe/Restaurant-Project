@@ -8,16 +8,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="UserStyle/OrderHiss.css">
+    <link rel="stylesheet" href="UserStyle/OrderHistoryy.css">
     <link rel="icon" href="./Picture/food.png">
 </head>
 
 <body>
+
+    <!-- Back Link -->
     <div class="Back">
         <a href="Prof.php" id="BackLink">Back</a>
         <h4><a href="Prof.php" id="homeLink">Home</a> / <a href="#" id="ThisPage">Order History</a></h4>
     </div>
-    <!-- <h1>Your Order History</h1> -->
+    <div id="PageTitle">
+        <h1>Your Food Order History</h1>
+        <p>Track your past orders, explore your favorite dishes, and reorder with ease. Your culinary journey, all in one place!</p>
+    </div>
+    <!-- Pagination -->
     <div class="pagination" id="pagination">
             <a id="prevPage">Previous</a>
             <a class="page-link" data-page="1">1</a>
@@ -36,11 +42,9 @@
         $sql = $dbt->prepare('SELECT distinct * from Orders o , Product p where o.id_P = p.id_P and user_id=?');
         $sql->execute([$user_id]);
         $Tab_products = $sql->fetchAll();
-
-        // echo '<pre>';
-        //     print_r($Tab_products);
-        // echo '</pre>';
     ?>
+
+    <!-- Table Of Ordred Products -->
     <table id='Table' class='Table'>
         <thead>
             <tr id='Tr1'>
@@ -83,14 +87,7 @@
         </tbody>
     </table>
 
-    <div style='background-color:black;width:600px;display:none' id='details'>
-        <h1 id='Ptitle'>Title:</h1>
-        <h1>Picture:</h1>
-        <h1>Price:</h1>
-        <h1>Quantity:</h1>
-    </div>
-
-    <script src='./Userjs/OrderHistoryyy.js'></script>
+    <script src='./Userjs/OrderHii.js'></script>
 
 
 </body>

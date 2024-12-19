@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="UserStyle/signn.css">
+    <link rel="stylesheet" href="UserStyle/sign_in_up.css">
     <title>Home</title>
     <link rel="icon" href="./Picture/food.png">
 </head>
 
 <body>
     <div class="wrapper">
+
+        <!-- Nav Bare -->
         <nav class="nav">
             <div class="nav-logo">
                 <a href="signUp.php"><img src="Picture/logolavilla-new_copy-2.png" alt=""></a>
@@ -19,7 +21,6 @@
             <div class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="signUp.php" class="link active">Home</a></li>
-                    <!-- <li><a href="#" class="link">Services</a></li> -->
                     <li><a href="contactUs.php" class="link">contact Us</a></li>
                     <li><a href="about.php" class="link">About</a></li>
                 </ul>
@@ -87,14 +88,12 @@
                             $_SESSION['pass'] = $p['pass'];
                             $_SESSION['picture'] = $p['pic'];
                             header('location: Prof.php');
-                            // exit();
                         }
                         else echo "<p name='C_Message' id='C_Message' style='display:block;background-color: rgba(250, 156, 156, 0.795);font-weight: 500;position: absolute;top: 0;'>Login Or Password Incorrect </p>";
                     }
                 else echo "<p name='C_Message' id='C_Message' style='display:block;background-color: rgba(250, 156, 156, 0.795);font-weight: 500;position: absolute;top: 0;'>Email Or Password is Empty</p>";
 
-            }  
-
+            } 
         ?>
 
             <!-- registration form -->
@@ -106,38 +105,36 @@
                 <div class="two-forms">
                     <div class="input-box">
                         <input type="text" class="input-field" data-type='First Name' placeholder="First name"
-                            name='F_name'>
-                        <span></span>
+                            name='F_name' id='F_name'>
                         <i class="bx bx-user"></i>
+                        <span></span>
                     </div>
                     <div class="input-box">
                         <input type="text" class="input-field" placeholder="Last name" name='L_name'>
                         <i class="bx bx-user"></i>
+                        <span></span>
                     </div>
                 </div>
                 <div class="input-box">
                     <input type="text" class="input-field" placeholder="Email" name="email">
                     <i class="bx bx-envelope"></i>
+                    <span></span>
+
                 </div>
                 <div class="input-box">
                     <input type="password" class="input-field" placeholder="Password" name="pass">
                     <i class="bx bx-lock-alt"></i>
+                    <span></span>
+
                 </div>
                 <div class="input-box">
                     <input type="password" class="input-field" placeholder="Comfirm Password" name="C_pass">
                     <i class="bx bx-lock-alt"></i>
+                    <span></span>
+
                 </div>
                 <div class="input-box">
                     <input type="submit" class="submit" value="Register" name='sign_up' >
-                </div>
-                <div class="two-col">
-                    <div class="one">
-                        <input type="checkbox" id="register-check" >
-                        <label for="register-check"> Remember Me</label>
-                    </div>
-                    <!-- <div class="two">
-                        <label><a href="#">Terms & conditions</a></label>
-                    </div> -->
                 </div>
             </form>
         </div>
@@ -166,15 +163,14 @@
                 //     $_SESSION['pass'] = $pass;
                 //     // header('location: page.php');
                 //     // exit();
-                // }
+                }
                 // else echo 'login ou mot de pass incorect';
             }
-            else {
-                echo 'Confirmation failed!!';
-            }
-        }
+            // else {
+            //     echo 'Confirmation failed!!';
+            // }
+        // }
         // else echo 'Remplire les Champs!!!';
-
 }  
 
 ?>
@@ -197,12 +193,92 @@
     </script>
 
     <script>
-    var a = document.getElementById("loginBtn");
-    var b = document.getElementById("registerBtn");
-    var x = document.getElementById("login");
-    let y = document.getElementById("register");
+        var a = document.getElementById("loginBtn");
+        var b = document.getElementById("registerBtn");
+        var x = document.getElementById("login");
+        let y = document.getElementById("register");
 
-    let cc = document.getElementById("id1");
+        let cc = document.getElementById("id1");
+
+        document.getElementById('register').addEventListener('submit', function (e) {
+
+        // Retrieve form inputs
+        const firstName = document.getElementById('F_name').value.trim();
+        const lastName = document.querySelector('input[name="L_name"]').value.trim();
+        const email = document.querySelector('input[name="email"]').value.trim();
+        const password = document.querySelector('input[name="pass"]').value.trim();
+        const confirmPassword = document.querySelector('input[name="C_pass"]').value.trim();
+
+        // Error handling
+        let valid = true;
+        const showError = (field, message) => {
+            const span = field.nextElementSibling.nextElementSibling; // Get the <span> element for error display
+            span.textContent = message;
+            span.style.color = 'red';
+            valid = false;
+        };
+
+        const clearError = (field) => {
+            const span = field.nextElementSibling.nextElementSibling;
+            span.textContent = '';
+        };
+
+        // Validate first name
+        const firstNameField = document.getElementById('F_name');
+        if (firstName === '') {
+            showError(firstNameField, 'First name is required');
+        } else {
+            clearError(firstNameField);
+        }
+
+        // Validate last name
+        const lastNameField = document.querySelector('input[name="L_name"]');
+        if (lastName === '') {
+            showError(lastNameField, 'Last name is required');
+        } else {
+            clearError(lastNameField);
+        }
+
+        // Validate email
+        const emailField = document.querySelector('input[name="email"]');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email === '') {
+            showError(emailField, 'Email is required');
+        } else if (!emailRegex.test(email)) {
+            showError(emailField, 'Invalid email format');
+        } else {
+            clearError(emailField);
+        }
+
+        // Validate password
+        const passwordField = document.querySelector('input[name="pass"]');
+        if (password === '') {
+            showError(passwordField, 'Password is required');
+        } else if (password.length < 8) {
+            showError(passwordField, 'Password must be at least 8 characters long');
+        } else {
+            clearError(passwordField);
+        }
+
+        // Validate confirm password
+        const confirmPasswordField = document.querySelector('input[name="C_pass"]');
+        if (confirmPassword === '') {
+            showError(confirmPasswordField, 'Please confirm your password');
+        } else if (password !== confirmPassword) {
+            showError(confirmPasswordField, 'Passwords do not match');
+        } else {
+            clearError(confirmPasswordField);
+        }
+
+        // If all validations pass, submit the form
+        if (valid) {
+            this.submit(); // Submit the form
+        }
+        else{
+            e.preventDefault();
+        }
+    });
+
 
 
 
@@ -231,7 +307,7 @@
 
 
 
-    <script src='./Userjs/signUpp.js'></script>
+    <script src='./Userjs/signUp.js'></script>
 
 </body>
 

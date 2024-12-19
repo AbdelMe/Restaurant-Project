@@ -2,20 +2,6 @@
 a{
     text-decoration: none;
 }
-/* header{
-    width: 1140px;
-    max-width: 80%;
-    margin: auto;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 100;
-}
-header a{
-    color: #eee;
-    margin-right: 40px;
-} */
 /* carousel */
 .carousel{
     height: 100vh;
@@ -114,6 +100,8 @@ header a{
     border: 1px solid #fff;
     color: #FBE9D0;
 }
+
+
 /* thumbail */
 .thumbnail{
     position: absolute;
@@ -184,7 +172,6 @@ header a{
 }
 
 /* animation text in first item */
-
 .carousel .list .item:nth-child(1) .content .author,
 .carousel .list .item:nth-child(1) .content .title,
 .carousel .list .item:nth-child(1) .content .topic,
@@ -215,6 +202,7 @@ header a{
 .carousel .list .item:nth-child(1) .content .buttons{
     animation-delay: 1.8s!important;
 }
+
 /* create animation when next click */
 .carousel.next .list .item:nth-child(1) img{
     width: 150px;
@@ -258,31 +246,8 @@ header a{
     }
 }
 
-/* running time */
-
-/* .carousel .time{
-    position: absolute;
-    z-index: 1000;
-    width: 0%;
-    height: 4px;
-    background-color: gold;
-    left: 0;
-    top: 0;
-    transform: translateY(-3.5px);
-}
-
-.carousel.next .time,
-.carousel.prev .time{
-    animation: runningTime 3s linear 1 forwards;
-}
-@keyframes runningTime{
-    from{ width: 100%}
-    to{width: 0}
-} */
-
 
 /* prev click */
-
 .carousel.prev .list .item:nth-child(2){
     z-index: 2;
 }

@@ -5,7 +5,7 @@ let notificationBar = document.querySelector(".notif");
 let information = document.querySelector(".information");
 
 
-// Animation part
+//Show Profile Bare if Mouse Enter The icon
 Page.addEventListener("mouseenter", () => {
   nav.style.scale = "1";
   nav.style.translate = "47%";
@@ -24,6 +24,7 @@ nav.onmouseleave = () => {
   document.body.style.overflowX = "hidden";
 };
 
+//Show Notification Bare if Mouse Enter The icon
 notificationIcon.addEventListener("mouseenter", () => {
   nav.style.scale = "0";
   nav.style.translate = "200%";
@@ -43,47 +44,35 @@ notificationBar.onmouseleave = () => {
   document.body.style.overflowX = "hidden";
 };
 
+
 addEventListener("load", () => {
   information.style.translate = "0%";
   information.style.transition = "1s";
 });
 
-// Ctreat Of Products
 
-let NumberDivs = 9;
-let i = 0;
-
+//Search By Date
 let ThisDay = document.getElementById('opt1');
 let ThisMonth = document.getElementById('opt3');
 let ThisYear = document.getElementById('opt4');
-// opt1.value = new Date();
-// // opt1.value = new Date().getFullYear();     //2024
-// // opt1.value = new Date().getDate();         //Day
-ThisDay.value = new Date().getDate();  //.getDate()
+
+ThisDay.value = new Date().getDate();
 ThisMonth.value = new Date().getMonth() + 1;
 ThisYear.value = new Date().getFullYear();
 
-// console.log(ThisDay.value)    3
 let SelectOpt = document.getElementById('SelectOpt');
 SelectOpt.onchange = ()=>{
-  // console.log(SelectOpt.value)  //Month 12
   let children = document.querySelectorAll("#container");
   for(ele of children ){
-    // for(i of ele.children){
-    //   console.log(i)
-    // }
-    // console.log(ele.lastElementChild)//Date
-    let ElementDay = new Date(ele.lastElementChild.innerHTML).getDate()  //.getDate()
+
+    let ElementDay = new Date(ele.lastElementChild.innerHTML).getDate()
     console.log(ElementDay)
     let ElementMonth = new Date(ele.lastElementChild.innerHTML).getMonth() + 1
     let ElementYear = new Date(ele.lastElementChild.innerHTML).getFullYear()
-    // console.log(d)
-    // let newDate = d.getFullYear() + d.getDate() + (d.getMonth() + 1)
-    // console.log(parseInt(SelectOpt.value) === parseInt(d))
+
     if(parseInt(SelectOpt.value) === parseInt(ElementDay)){
       ele.style.display = 'flex';
     }
-    // else if(parseInt(SelectOpt.value) > parseInt(ElementWeek) && )
     else if(parseInt(SelectOpt.value) === parseInt(ElementMonth)){
       ele.style.display = 'flex';
     }
@@ -170,8 +159,6 @@ displayPage(currentPage);
 updatePagination();
 
 
-
-
 //Rating
 let stars = document.getElementsByClassName('star');
 
@@ -198,20 +185,13 @@ function remove() {
 
 
 //Add To Cart
-
 let CartOfProduct = document.getElementById('CartOfProduct')
 let table = document.createElement('table')
-// let LastTr = document.createElement('tr');
-// LastTr.innerHTML = 'Total is : '
-// LastTr.style.textAlign = 'center'
-// table.style.width = '100%'
-
 
 let link = document.createElement('button')
 link.innerHTML = 'delete All'
 link.id = 'linkBtn'
 document.getElementById('AddedItems').appendChild(link);
-
 
 function affiche(id){
   if(parseInt(CartOfProduct.innerHTML) === 9){
@@ -245,7 +225,6 @@ function affiche(id){
       td3.innerHTML = "Price: " +parseInt(ele.children[3].children[0].innerHTML) + '$'
       td4.appendChild(Link)
 
-
       let tr = document.createElement('tr');
       tr.style.textAlign = 'center'
 
@@ -256,14 +235,11 @@ function affiche(id){
 
       table.appendChild(tr)
 
-
       document.getElementById('AddedItems').appendChild(table);
     }
-
   }
- 
 
-
+  //Dellet All Product From Cart
   document.getElementById('linkBtn').onclick = ()=>{
     document.getElementById('AddedItems').removeChild(document.querySelector('table'))
     CartOfProduct.innerHTML = 0
@@ -273,25 +249,7 @@ function affiche(id){
   }
 }
 
-
-//Notification
-
-
-
-
-
-
-
-
-
-// let TotalPrice = document.createElement('p');
-// TotalPrice.innerHTML = '1'
-// let child = document.querySelectorAll("#AddedItems div")
-// for(ele of child){
-//   parseInt(TotalPrice.innerHTML)+=parseInt(ele.children[1].innerHTML)
-// }
-// document.getElementById('AddedItems').appendChild(TotalPrice);
-
+//check if Cart have at least 1 product
 let cart = document.querySelector('.Cart');
 let AddedItems = document.getElementById('AddedItems');
 cart.onclick = ()=>{
@@ -310,7 +268,7 @@ cart.onclick = ()=>{
 }
 
 
-
+//check Notification exist or no
 let Notif_ = document.getElementById('Notif_');
 let picText = document.querySelector('.picText');
 
@@ -322,7 +280,7 @@ if(picText.children[1].innerText.toLowerCase() === 'NO New Pruducts'.toLowerCase
 
 
 
-//More Options
+//More Options Animation
 let More_Options = document.getElementById('More_Options');
 let Options = document.getElementById('Options');
 More_Options.onclick = ()=>{
@@ -332,6 +290,3 @@ More_Options.onclick = ()=>{
 Options.onmouseleave = ()=>{
   Options.style.transform = 'rotateX(90deg)';
 }
-
-
-

@@ -12,10 +12,12 @@ thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
 let timeRunning = 3000;
 let timeAutoNext = 7000;
 
+//Next Page
 nextDom.onclick = function () {
   showSlider("next");
 };
 
+//Prev Page 
 prevDom.onclick = function () {
   showSlider("prev");
 };
@@ -23,6 +25,8 @@ let runTimeOut;
 let runNextAuto = setTimeout(() => {
   next.click();
 }, timeAutoNext);
+
+//Slider Animation
 function showSlider(type) {
   let SliderItemsDom = SliderDom.querySelectorAll(".carousel .list .item");
   let thumbnailItemsDom = document.querySelectorAll(

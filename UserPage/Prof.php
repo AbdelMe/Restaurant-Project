@@ -9,13 +9,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="UserStyle/Slide.css">
+    <link rel="stylesheet" href="UserStyle/Slider.css">
     <link rel="stylesheet" href="UserStyle/backGg.css">
-    <link rel="stylesheet" href="UserStyle/Poooffffiii.css">
+    <link rel="stylesheet" href="UserStyle/Profiless.css">
     <link rel="icon" href="./Picture/food.png">
 
 </head>
-
+<?php  
+    // if(! isset($_SESSION['email'])){
+    //     header('location: signUp.php');
+    //     // exit();
+    // }
+?>
 <body>
     <?php
         include ('connect.php');
@@ -27,25 +32,28 @@
 
     ?>
 
+    <!-- Header -->
     <div class="header">
         <div id='CartOfProduct'>0</div>
         <header>
+
+            <!-- App Logo -->
             <div class="Logo_Search">
                 <a href="prof.php"><img src="Picture/logolavilla-new_copy-2.png" alt=""></a>
-                <!-- <input type="search" placeholder="Pizza,Burger,Tagin..."> -->
                  <img src="Picture/caret-down.png" id='down-chevron'>
-                 <!-- <select>
-                    <option>Products</option>
-                    <option >Orders</option>
-                    <option >Nothings</option>
-                 </select> -->
                  <h1 id='More_Options'>See More Options</h1>
             </div>
+
+            <!-- Options For Scrolling into The App -->
             <div id='Options'>
                 <a href="">Home</a>
                 <a href="#AllProduct">Products</a>
                 <a href="OrderHistory.php?user_id=<?=  $_SESSION['user_Id'] ?>">Your Orders</a>
+                <a href="discounts.php">Discounts</a>
+                <a href="#tranding">Food Slide</a>
             </div>
+
+            <!-- More Options  -->
             <div class="Menu">
                 <div class='divProfil'>
                     <img src="<?=  $_SESSION['picture']  ?>" id="profil">
@@ -60,11 +68,12 @@
                 </div>
             </div>
 
-
             <div id='AddedItems'></div>
+
+            <!-- User Profil Bare -->
             <div id="sideBar">
                 <div class="picSideBar">
-                    <img src="Picture/logolavilla-new_copy-2.png" alt="">
+                    <img src="Picture/logolavilla-new_copy-2.png">
                 </div>
                 <div class="services">
                     <h1>services</h1>
@@ -76,12 +85,11 @@
                     <h1>Profil</h1>
                     <a href="info.php?user_id=<?=  $_SESSION['user_Id'] ?>">Your Information</a>
                     <a href="OrderHistory.php?user_id=<?=  $_SESSION['user_Id'] ?>">Orders History</a>
-                    <!-- <a href="">Suggested Food</a> -->
-                    <!-- <a href="">Log Out</a> -->
+                    <a href="Discounts.php">Discounts</a>
                 </div>
             </div>
 
-            <!-- Notification Html -->
+            <!-- Notification Bare -->
             <div class="notif">
                 <div class="picText">
                     <img src="<?php if($sql->rowCount() === 0) echo './Picture/error404.png'; else echo '../AdminPage/' . $Notifs['picture']; ?>" id="TaginPic">
@@ -106,41 +114,20 @@
     </div>
 
 
-
-
     <!-- carousel -->
     <div class="carousel">
         <!-- list item -->
         <div class="list">
-            <!-- <div class="item">
-                <img
-                    src="Picture/backG_Pic/exploding-burger-with-vegetables-melted-cheese-black-background-generative-ai.jpg">
-                <div class="content">
-                    <div class="author">SPICY FOOD</div>
-                    <div class="title">SPICY FOOD</div>
-                    <div class="topic">JUICE</div>
-                    <div class="des">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima
-                        placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et
-                        quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at
-                        laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                    </div>
-                    <div class="buttons">
-                        <button><a href="about.php">SEE MORE</a></button>
-                    </div>
-                </div>
-            </div> -->
             <div class="item">
-                <img src="Picture/backG_Pic/view-delicious-shawarma-dish.jpg">
+                <img src="Picture/high-angle-vegetarian-burger-cutting-board-with-copy-space.jpg">
                 <div class="content">
                     <!-- <div class="author">MED ABDEL</div> -->
                     <div class="title">SPICY FOOD</div>
-                    <div class="topic">JUICE</div>
+                    <div class="topic">Burger</div>
                     <div class="des">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima
-                        placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et
-                        quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at
-                        laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
+                        A high-angle vegetarian burger shot captures the burger from above,
+                        showcasing its vibrant layers, such as fresh vegetables and a plant-based patty.
+                        This angle highlights the textures and colors, making it visually appealing.
                     </div>
                     <div class="buttons">
                         <button><a href="about.php">SEE MORE</a></button>
@@ -148,16 +135,16 @@
                 </div>
             </div>
             <div class="item">
-                <img src="Picture/backG_Pic/fresh-pasta-with-hearty-bolognese-parmesan-cheese-generated-by-ai.jpg">
+                <img src="Picture/delicious-ravioli-pasta-plate-with-fork-copy-space.jpg">
                 <div class="content">
                     <!-- <div class="author">SPICY FOOD</div> -->
                     <div class="title">SPICY FOOD</div>
-                    <div class="topic">JUICE</div>
-                    <div class="des">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima
-                        placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et
-                        quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at
-                        laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
+                    <div class="topic">Pasta</div>
+                    <div class="des">     
+                        A delicious ravioli pasta plate features delicate, stuffed pasta pockets filled
+                        with rich ingredients like cheese, spinach, or meat, served with a flavorful sauce.
+                        The dish is often garnished with fresh herbs, creating a perfect balance of textures 
+                        and tastes in each bite.
                     </div>
                     <div class="buttons">
                         <button><a href="about.php">SEE MORE</a></button>
@@ -165,16 +152,16 @@
                 </div>
             </div>
             <div class="item">
-                <img src="Picture/backG_Pic/delicious-pizza-studio.jpg">
+                <img src="Picture/delicious-pizza-studio.jpg">
                 <div class="content">
                     <!-- <div class="author">SPICY FOOD</div> -->
                     <div class="title">SPICY FOOD</div>
-                    <div class="topic">JUICE</div>
+                    <div class="topic">Pizza</div>
                     <div class="des">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima
-                        placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et
-                        quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at
-                        laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
+                        A pizza is a classic dish consisting of a round, thin crust topped with a rich tomato sauce,
+                        melted cheese, and a variety of ingredients like vegetables, meats, and herbs. The combination
+                        of crispy edges and gooey cheese, along with savory toppings, makes it a universally loved
+                        comfort food, perfect for any occasion.
                     </div>
                     <div class="buttons">
                         <button><a href="about.php">SEE MORE</a></button>
@@ -184,42 +171,24 @@
         </div>
         <!-- list thumnail -->
         <div class="thumbnail">
-            <!-- <div class="item">
-                <img
-                    src="Picture/backG_Pic/exploding-burger-with-vegetables-melted-cheese-black-background-generative-ai.jpg">
-                <div class="content">
-                    <div class="title">
-                        SPICY BURGER
-                    </div>
-                    <div class="description">
-                        Description
-                    </div>
-                </div>
-            </div> -->
             <div class="item">
-                <img src="Picture/backG_Pic/view-delicious-shawarma-dish.jpg">
+                <img src="Picture/high-angle-vegetarian-burger-cutting-board-with-copy-space.jpg">
                 <div class="content">
                     <div class="title">
-                        DELECIOUS SHAWARMA
+                        DELECIOUS Burger
                     </div>
-                    <!-- <div class="description">
-                        Description
-                    </div> -->
                 </div>
             </div>
             <div class="item">
-                <img src="Picture/backG_Pic/fresh-pasta-with-hearty-bolognese-parmesan-cheese-generated-by-ai.jpg">
+                <img src="Picture/delicious-ravioli-pasta-plate-with-fork-copy-space.jpg">
                 <div class="content">
                     <div class="title">
-                        HEARTY PARMESAN
+                        HEARTY Burger
                     </div>
-                    <!-- <div class="description">
-                        Description
-                    </div> -->
                 </div>
             </div>
             <div class="item">
-                <img src="Picture/backG_Pic/delicious-pizza-studio.jpg">
+                <img src="Picture/delicious-pizza-studio.jpg">
                 <div class="content">
                     <div class="title">
                         DELECIEUS PIZZA
@@ -237,29 +206,19 @@
                 < </button>
                     <button id="next">></button>
         </div>
-        <!-- time running -->
-        <!-- <div class="time"></div> -->
     </div>
-
-
-
-    <!-- <div class="background">
-            <img src="./Picture/wallpaperflare.com_wallpaper (2).jpg" alt="">
-            <div class="information">
-                <h1>Order The Most Delecious Food<br>& Drinks & Fruts </h1>
-                <p>With The Best And Fast Delevery In Morocco</p>
-                <button>Order Now</button>
-            </div>
-        </div> -->
 
 
 
     <!-- Product Slider -->
     <section id="tranding">
         <div class="container">
-            <!-- <h3 class="text-center section-subheading">- popular Delivery -</h3> -->
+            <!-- <h3 class="text-center section-subheading">All You Need Is Here</h3> -->
              <!-- <img src="../wallpaperflare.com_wallpaper (2).jpg" alt="" width=''> -->
-            <h1 class="section-heading">Discover Our Products</h1>
+            <div id="DiscoverP">
+                <h1>Discover Our Delicious Products</h1>
+                <p>Explore our carefully selected food items, ranging from fresh ingredients to ready-to-eat meals. Find everything you need to bring flavor to your kitchen!</p>
+            </div>
         </div>
         <div class="container">
             <div class="swiper tranding-slider">
@@ -455,8 +414,14 @@
         </div>
     </section>
 
+    <!-- Products Title -->
+    <div id="ProductsTitle">
+        <h1>Our Food Products</h1>
+        <p>Discover a wide range of fresh ingredients and delicious food products. Browse through our curated selection and find everything you need to cook your favorite meals!</p>
+    </div>
 
 
+    <!-- Pagination -->
     <div class="pagination" id="pagination">
         <a id="prevPage">Previous</a>
         <a class="page-link" data-page="1">1</a>
@@ -465,8 +430,11 @@
         <a id="nextPage">Next</a>
         <p id="page-numbers"></p>
     </div>
-    <!-- Product html -->
+
+    <!-- Product Details  -->
     <div class="Prod" id="AllProduct">
+
+        <!-- Search For special Food -->
         <div class="Filter">
             <h1>Filter By</h1>
             <div id="F-ele">
@@ -479,15 +447,11 @@
                 <div class="price">
                     <label class="TitleLabel">price Less Than: </label>
                     <div>
-                        <!-- <label >From </label> -->
                         <input type="number" placeholder="Price" id="LessThan"><br>
-                        <!-- <label >To </label><input type="number"> -->
                     </div>
                     <label class="TitleLabel">price Biger Than: </label>
                     <div>
-                        <!-- <label >From </label> -->
                         <input type="number" placeholder="Price" id="BigerThan"><br>
-                        <!-- <label >To </label><input type="number"> -->
                     </div>
                 </div>
                 <div class="Date">
@@ -496,32 +460,23 @@
                         <select name="" id="SelectOpt" >
                             <option>--- All Time ---</option>
                             <option value="" id='opt1'>This Day</option>
-                            <!-- <option value="" id='opt2'>This Week</option> -->
                             <option value="" id='opt3'>This Month</option>
                             <option value="" id='opt4'>This Year</option>
                         </select>
                     </div>
                 </div>
-                
-                <!-- <div class="search">
-                    <button id="btn">Search</button>
-                </div> -->
             </div>
         </div>
-        <div class="Food IceCream Juice">
 
+        <!-- Food Card  -->
+        <div class="Food IceCream Juice">
             <?php
 
                 include 'connect.php';
 
-
                 $sql = $dbt->prepare('SELECT * from product order by rand()');//limit 6
                 $sql->execute();
                 $Tab_products = $sql->fetchAll();
-
-                // echo '<pre>';
-                // print_r($Tab_products);
-                // echo '</pre>';
 
                 foreach($Tab_products as $P){
                     ?>
@@ -533,16 +488,14 @@
                     Price : <span><?php echo $P['Price'] ?>$</span>
                 </div>
                 <a id='OrderLink' href='Ord.php?id_P=<?= $P['id_P'] ?>' >Order Now</a>
-                <!-- <button name='CartLink' > -->
                     <img src="./Picture/add-to-cart.png" id='addtocart'  onclick="affiche(<?php echo $P['id_P'] ?>)">
-                <!-- </button> -->
                 <span hidden><?php echo  $P['Posted_Date'] ?></span>
             </div>
             <?php } ?>
         </div>
     </div>
 
-
+    <!-- Footer -->
     <footer id="Foot">
         <section>
             <div>
@@ -554,11 +507,11 @@
             <div>
                 <h1>social Media</h1>
                 <div>
-                    <p><a href=""><img src="Picture/social media/icons8-facebook-96.png" alt=""></a></p>
+                    <p><a href="https://www.facebook.com/DevMind1" target="_blank"><img src="Picture/social media/icons8-facebook-96.png" alt=""></a></p>
                     <p><a href=""><img src="Picture/social media/icons8-instagram-96.png" alt=""></a></p>
-                    <p><a href=""><img src="Picture/social media/icons8-linkedin-96.png" alt=""></a></p>
+                    <p><a href="https://www.linkedin.com/in/mohammed-el-abdellaoui-397b15313/" target="_blank"><img src="Picture/social media/icons8-linkedin-96.png" alt=""></a></p>
                     <p><a href=""><img src="Picture/social media/icons8-twitter-96.png" alt=""></a></p>
-                    <p><a href=""><img src="Picture/social media/icons8-youtube-96.png" alt=""></a></p>
+                    <p><a href="https://www.youtube.com/@SimoHd" target="_blank"><img src="Picture/social media/icons8-youtube-96.png" alt=""></a></p>
                 </div>
             </div>
             <div>
@@ -567,6 +520,23 @@
                 <p><a href="ContactUs.php">Contact Us</a></p>
             </div>
         </section>
+        <div id="Location">
+            <div>
+                <img src="./Picture/logolavilla-new_copy-2.png" width='300px'>
+            </div>
+            <div>
+                <!-- <h1>Our Location</h1> -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d5988.3344617982!2d-5.0192026412014314!3d34.023284572190136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sla%20villa%20fes!5e1!3m2!1sen!2sus!4v1734015691393!5m2!1sen!2sus" 
+                    width="400" 
+                    height="200" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
         <p>©All Right Reserved</p>
     </footer>
 

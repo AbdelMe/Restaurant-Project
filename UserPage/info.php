@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Information</title>
-    <link rel="stylesheet" href="UserStyle/inforr.css">
+    <link rel="stylesheet" href="UserStyle/infos.css">
     <link rel="icon" href="./Picture/food.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,15 +14,12 @@
 
 <body>
     <?php
-        // include('connect.php');
         session_start();
-        // $sql = $dbt->prepare('SELECT * from Clients where email=?');
-        // $sql->execute([$_GET['email']]);
-        // $products = $sql->fetch();
-    
     ?>
+
     <!-- page update -->
     <?php
+            @$simo = $_POST['user_id'];
             @$F_name = $_POST['F_name'];
             @$L_name = $_POST['L_name'];
             @$email = $_POST['email'];
@@ -41,7 +38,6 @@
             include('connect.php');
 
             if(isset($update)){
-
                 $N = $dbt->prepare('UPDATE Clients set F_name=? , L_name=? , email=? , pass=? , pic=? where user_id=?');
                 $N->execute(array($F_name , $L_name , $email , $pass, $fileDir , $_GET['user_id']));
                 if($N->rowCount()!=0){
@@ -49,20 +45,20 @@
                     $_SESSION['L_name'] = $L_name;
                     $_SESSION['email'] = $email;
                     $_SESSION['pass'] = $pass;
-                    $_SESSION['picture'] = $fileDir ;
-                    // echo '<br>';
-                    // print_r($_SESSION['picture']);
-                    // echo '<br>';
-
-                    // $_GET['email'] = $_SESSION['email'];
-                    // echo '<h1>Update Done!!</h1>';
+                    if(stripos($fileDir,'.png') || stripos($fileDir,'.jpg') || stripos($fileDir,'.svg') || stripos($fileDir,'.gif')){
+                        $_SESSION['picture'] = $fileDir;
+                    }
                 }  
-                else echo 'Update Failed';
+                // echo $fileDir;
+                // else echo 'Update Failed';
             }
     ?>
 
+    <!-- Back Link -->
     <h4><a href="Prof.php" id="homeLink">Home</a> / <a href="#" id="ThisPage">Your Information</a></h4>
     <a href="Prof.php" id="BackLink">Back</a>
+
+    <!-- Form For Update User Informations  -->
     <div class="editProfil">
         <form action="" method="post" enctype='multipart/form-data'>
             <img src="<?= $_SESSION['picture'] ?>" id='MyProfile'>
@@ -80,9 +76,6 @@
             <input type="submit" value="Edit" name='update'>
         </form>
     </div>
-
-
-
 </body>
 
 </html>
