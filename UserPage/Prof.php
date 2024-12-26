@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="UserStyle/Slider.css">
     <link rel="stylesheet" href="UserStyle/backGg.css">
-    <link rel="stylesheet" href="UserStyle/Profiless.css">
+    <link rel="stylesheet" href="UserStyle/Profile.css">
     <link rel="icon" href="./Picture/food.png">
 
 </head>
@@ -56,7 +56,7 @@
             <!-- More Options  -->
             <div class="Menu">
                 <div class='divProfil'>
-                    <img src="<?=  $_SESSION['picture']  ?>" id="profil">
+                    <a href="info.php"><img src="<?=  $_SESSION['picture']  ?>" id="profil"></a>
                     <p>Hi, <?= $_SESSION['F_name']  ?> </p>
                 </div>
                 <div class='divPic'>
@@ -541,12 +541,12 @@
     </footer>
 
 
-    <script src="./Userjs/Prrffs.js"></script>
+    <script src="./Userjs/Prrffss.js"></script>
     <script src="./Userjs/filtt.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- <script src="./Userjs/tst.js"></script> -->
-    <!-- <script src='./Userjs/backG.js'></script> -->
+    <script src="./Userjs/tst.js"></script>
+    <script src='./Userjs/backG.js'></script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

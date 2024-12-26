@@ -45,7 +45,7 @@
             <div class="info">
                 <p><?php  echo $products['Title'] ?></p>
                 <p>Price: <span id='Cr_Price'><?php echo $products['Price'] ?></span>$</p>
-                <p><?php echo $products['Price'] + 5 ?>$</p>
+                <p id='Past_Price'><?php echo $products['Price'] + 5 ?>$</p>
                 <p id='discount_Num'>Discount: <span><?php if($sql1->rowCount() === 0) echo '0'; else echo $discount['discount_Num'] ?></span>%</p>
             </div>
 
@@ -134,7 +134,7 @@
                 }
             }
         ?>
-    <script src='./Userjs/vallyy.js'></script>
+    <script src='./Userjs/validation.js'></script>
 </body>
 
 </html>
